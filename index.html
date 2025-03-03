@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Asa se va numi magazinul-->
+    <title>4Pets</title>
+    <!-- Meta tags -->
+    <meta name="description" content="Magazinul tau de incredere pentru animale de companie">
+    <meta name="keywords" content="animale, companie, caini, pisici, pasari, pesti, rozatoare, hrana, jucarii, accesorii, ingrijire">
+    <meta name="author" content="Matei Pop">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="resurse/ico/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="resurse/ico/favicon.svg" />
+    <link rel="shortcut icon" href="resurse/ico/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="resurse/ico/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="4Pets" />
+    <link rel="manifest" href="resurse/ico/site.webmanifest" />
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>4Pets</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acasa</a>
+                    <ul>
+                        <li><a href="#produse">Produse</a></li>
+                        <li><a href="#despre-noi">Despre noi</a></li>
+                    </ul>
+                </li>
+                <li><a href="produse.html">Produse</a></li>
+                <li><a href="despre.html">Despre noi</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="acasa">
+            <h2>Magazinul tau de incredere pentru animale de companie</h2>
+            <section id="produse">
+                <h3>Produse</h3>
+                <ul>
+                    <li><b>Alimente</b></li>
+                    <li><b>Jucarii</b></li>
+                    <li><b>Accesorii</b></li>
+                    <li><b>Produse de ingrijire</b></li>
+                </ul>
+                <p>Oferim o gama variata de produse pentru toate tipurile de animale de companie.</p>
+                <p>Formula pentru calcularea costului total al hranei pentru animale:</p>
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>Cost</mi>
+                        <mo>=</mo>
+                        <mi>Preț</mi>
+                        <mo>&#xD7;</mo>
+                        <mi>Unități</mi>
+                    </mrow>
+                </math>
+                <!-- External link -->
+                <p>Vizitați <a href="https://www.example.com" target="_blank">site-ul nostru partener</a> pentru mai multe informații.</p>
+            </section>
+            <section id="despre-noi">
+                <h3>Despre noi</h3>
+                <p><b>4Pets</b> este un magazin online care ofera o gama variata de produse pentru animalele de companie. Ne dorim sa oferim clientilor nostri cele mai bune produse la cele mai bune preturi.</p>
+                <dl>
+                    <dt><dfn>Fondat</dfn></dt>
+                    <dd>2020</dd>
+                    <dt><dfn>Misiune</dfn></dt>
+                    <dd>Sa oferim produse de calitate pentru animalele de companie.</dd>
+                </dl>
+            </section>
+            <section id="faq">
+                <h3>Întrebări frecvente</h3>
+                <details>
+                    <summary>Ce tipuri de produse oferiți?</summary>
+                    <p>Oferim o gamă variată de produse pentru toate tipurile de animale de companie, inclusiv alimente, jucării, accesorii și produse de îngrijire.</p>
+                </details>
+                <details>
+                    <summary>Cum pot plasa o comandă?</summary>
+                    <p>Puteți plasa o comandă direct pe site-ul nostru, selectând produsele dorite și urmând pașii pentru finalizarea comenzii.</p>
+                </details>
+                <details>
+                    <summary>Care sunt opțiunile de livrare?</summary>
+                    <p>Oferim mai multe opțiuni de livrare, inclusiv livrare standard și livrare rapidă. Detaliile complete sunt disponibile în timpul procesului de checkout.</p>
+                </details>
+            </section>
+            <!-- Iframe and links to open in iframe -->
+            <section id="videos">
+                <h3>Videoclipuri relevante</h3>
+                <iframe id="videoFrame" width="560" height="315" src="https://www.youtube.com/embed/oRDRfikj2z8" frameborder="0" allowfullscreen></iframe>
+                <ul>
+                    <li><a href="https://www.youtube.com/embed/oRDRfikj2z8" target="videoFrame">Video 1</a></li>
+                    <li><a href="https://www.youtube.com/embed/_d4zSb3OR7g" target="videoFrame">Video 2</a></li>
+                </ul>
+            </section>
+            <!-- Download link -->
+            <section id="download">
+                <h3>Descărcări</h3>
+                <a href="resurse/documente/ghid.pdf" download="Ghid_4Pets">Descarcă ghidul nostru</a>
+            </section>
+            <!-- Image map -->
+            <section id="image-map">
+                <h3>Harta magazinului</h3>
+                <img src="resurse/Images/dogo.jpg" alt="Harta magazinului" usemap="#magazinMap">
+                <map name="magazinMap">
+                    <area shape="rect" coords="50,50,200,200" alt="Produse" href="#produse">
+                    <area shape="rect" coords="220,50,370,200" alt="Despre noi" href="#despre-noi">
+                    <area shape="rect" coords="50,220,200,370" alt="Întrebări frecvente" href="#faq">
+                </map>
+            </section>
+        </section>
+    </main>
+    <footer class="grid-area-footer grid-item">
+        <a href="#acasa" id="link-top" style="padding: 3%;">Înapoi la începutul paginii</a>
+        <br>
+        <a href="mailto:popmatei70@gmail.com" class="BUTTON_YEV" style="align-self: center;">Mail Me</a>
+        <br>
+        <a href="tel:+40726195996" style="align-self: flex-end; margin-right: 20px;"><span class="fas fa-gear fa-fw fa-spin"></span>Call Us: +40726195996 </a>
+        <br>
+        <a href="https://maps.google.com/?q=Facultatea+de+Matematica+si+Informatica" target="_blank" style="align-self: flex-end; margin-right: 20px;"><span class="fas fa-regular fa-house"></span> Visit Us: Strada Academiei 14, Bucharest, Romania</a>
+        <br>
+        <a href="https://wa.me/+40726195996" style="align-self: flex-end; margin-right: 20px;"><span class="fas fa-regular fa-handshake"></span>Chat on WhatsApp</a>
+        <br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.679835588648!2d26.09630631552819!3d44.44691797910262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff3a7d7b7b7b%3A0x7b7b7b7b7b7b7b7b!2sFacultatea%20de%20Matematica%20si%20Informatica!5e0!3m2!1sen!2sro!4v1616581234567!5m2!1sen!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <br>
+        <small style="align-self: center; margin-right: 20px; font-size: larger;">&copy;<time datetime="2025-03-03">2025</time>, Toate drepturile rezervate.</small>
+    </footer>
+</body>
+</html>
