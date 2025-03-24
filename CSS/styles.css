@@ -1,0 +1,339 @@
+:root {
+    /* Spacing variables */
+    --spacing-large: 30px;
+    --spacing-medium: 20px;
+    --spacing-small: 10px;
+    --text-padding: 15px;
+    
+    /* Color scheme variables */
+    --color-primary: #5EB95E;     /* Main green */
+    --color-primary-light: #8ED28E; /* Light green */
+    --color-primary-dark: #3A7539;  /* Dark green */
+    --color-accent: #A67C52;      /* Warm brown */
+    --color-accent-light: #F5EFE0; /* Light beige */
+    
+    /* Functional color variables */
+    --header-bg-color: var(--color-primary);
+    --main-bg-color: var(--color-accent-light);
+    --footer-bg-color: var(--color-primary-dark);
+    --text-color: #333333;
+    --text-color-light: #ffffff;
+    --link-color: var(--color-primary-dark);
+    --link-hover-color: var(--color-accent);
+    --button-bg-color: var(--color-accent);
+    --button-text-color: #ffffff;
+    --border-color: var(--color-primary-light);
+    --highlight-color: var(--color-accent);
+    
+    /* Effect variables */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    
+    /* Font size variables for responsive text */
+    --base-font-size: 16px;
+    --medium-font-size: 18px;
+    --large-font-size: 20px;
+}
+
+/* Base styles */
+html {
+    font-size: var(--base-font-size);
+    transition: font-size 0.3s ease;
+}
+
+body {
+    padding-left: var(--spacing-large);
+    padding-right: var(--spacing-large);
+    background-color: var(--color-accent-light);
+    color: var(--text-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p, li, td, th {
+    font-size: 1rem;
+}
+
+header {
+    background-color: var(--header-bg-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-medium);
+    color: var(--text-color-light);
+    margin-bottom: var(--spacing-medium);
+}
+
+main {
+    margin-bottom: var(--spacing-medium);
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--text-color-light);
+    border-top: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-medium);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+footer a {
+    color: var(--color-accent-light);
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: var(--color-primary-light);
+    text-decoration: underline;
+}
+
+button, .button {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Grid container */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "zone1 zone1 zone1 zone1"
+        "zone5 zone6 zone6 zone7"
+        "zone3 zone3 zone2 zone2"
+        "zone4 zone4 zone2 zone2"
+        "zone8 zone8 zone8 zone8";
+    gap: var(--spacing-large);
+}
+
+/* Add consistent text padding to all content containers */
+.zone-1, .zone-2, .zone-3, .zone-4, .zone-5, .zone-6, .zone-7, .zone-8, 
+p, h1, h2, h3, li, dt, dd {
+    padding: var(--text-padding);
+}
+
+/* Styling for each zone */
+.zone-1 {
+    grid-area: zone1;
+    background-color: var(--color-primary-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    min-height: 300px;
+}
+
+.zone-2 {
+    grid-area: zone2;
+    background-color: var(--color-accent-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.zone-3 {
+    grid-area: zone3;
+    background-color: var(--color-primary-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.zone-4 {
+    grid-area: zone4;
+    background-color: var(--color-primary-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.zone-5 {
+    grid-area: zone5;
+    background-color: var(--color-accent-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.zone-6 {
+    grid-area: zone6;
+    background-color: var(--color-accent-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.zone-7 {
+    grid-area: zone7;
+    background-color: var(--color-primary-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.zone-8 {
+    grid-area: zone8;
+    background-color: var(--color-primary-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Z-pattern layout for zone-1 */
+.z-pattern {
+    display: grid;
+    grid-template-areas:
+        "top-left top-right"
+        "bottom-left bottom-right";
+    gap: var(--spacing-medium);
+    height: 100%;
+}
+
+.z-top-left {
+    grid-area: top-left;
+}
+
+.z-top-right {
+    grid-area: top-right;
+    text-align: center;
+}
+
+.z-bottom-left {
+    grid-area: bottom-left;
+    text-align: center;
+}
+
+.z-bottom-right {
+    grid-area: bottom-right;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--color-primary);
+    color: var(--text-color-light);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive image styles */
+img, iframe, video {
+    width: 100%;
+    max-width: 100%;
+    min-width: 150px; /* Add minimum width */
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+/* Media queries for medium screens */
+@media (max-width: 1024px) {
+    .z-top-right, .z-bottom-left img {
+        max-width: 70%;
+        min-width: 100px;
+    }
+    
+    html {
+        font-size: var(--medium-font-size);
+    }
+    
+    body {
+        padding-left: var(--spacing-medium);
+        padding-right: var(--spacing-medium);
+    }
+    
+    /* Different layout for medium screens */
+    .grid-container {
+        grid-template-areas:
+            "zone1 zone1 zone1"
+            "zone5 zone6 zone2"
+            "zone3 zone7 zone2"
+            "zone4 zone8 zone2";
+        gap: var(--spacing-medium); /* Decrease gap for medium screens */
+    }
+    
+    /* Disable animations on medium screens */
+    .animation {
+        animation: none;
+    }
+}
+
+/* Media queries for small screens */
+@media (max-width: 768px) {
+    .z-top-right, .z-bottom-left img {
+        max-width: 50%;
+        min-width: 80px;
+    }
+
+    html {
+        font-size: var(--base-font-size);
+    }
+    
+    body {
+        padding-left: var(--spacing-small);
+        padding-right: var(--spacing-small);
+    }
+    
+    /* Single column layout for small screens */
+    .grid-container {
+        grid-template-areas:
+            "zone1"
+            "zone5"
+            "zone6"
+            "zone3"
+            "zone2"
+            "zone4"
+            "zone7"
+            "zone8";
+        gap: var(--spacing-small); /* Decrease gap for small screens */
+    }
+    
+    /* Z-pattern becomes vertical on small screens */
+    .z-pattern {
+        grid-template-areas:
+            "top-left"
+            "top-right"
+            "bottom-left"
+            "bottom-right";
+    }
+    
+    /* Disable animations on small screens */
+    .animation {
+        animation: none;
+    }
+}
