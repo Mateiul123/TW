@@ -1,0 +1,153 @@
+/* Table styling - Updated with all requirements */
+.table-container {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin: var(--spacing-medium) 0;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 5px double var(--color-primary-dark);
+    border-radius: var(--border-radius);
+    caption-side: bottom;
+    margin-bottom: var(--spacing-small);
+    overflow: hidden; /* Ensures the rounded corners are visible */
+}
+
+caption {
+    padding: var(--spacing-small) 0;
+    font-style: italic;
+    color: var(--color-primary-dark);
+    font-weight: bold;
+}
+
+/* Enhanced header styling */
+thead tr {
+    border-bottom: 3px solid var(--color-primary-dark);
+}
+
+th {
+    background-color: var(--color-primary);
+    color: var(--text-color-light);
+    padding: var(--spacing-medium) var(--spacing-small);
+    border: 1px solid var(--border-color);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: var(--spacing-small);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.75s, color 0.75s, border 0.75s;
+}
+
+/* Zebra striping for rows */
+tbody tr:nth-child(odd) {
+    background-color: rgba(142, 210, 142, 0.1); /* Light version of primary-light */
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(245, 239, 224, 0.3); /* Light version of accent-light */
+}
+
+/* First column styling */
+td:first-child, th:first-child {
+    font-weight: bold;
+    border-left: 3px solid var(--color-primary);
+    background-color: rgba(166, 124, 82, 0.1); /* Subtle accent color */
+}
+
+/* Alternate column text colors */
+td:nth-child(odd) {
+    color: var(--color-primary-dark);
+}
+
+td:nth-child(even) {
+    color: var(--color-accent);
+}
+
+/* Price column styling */
+td:nth-child(3) {
+    font-weight: bold;
+    text-align: right;
+    color: var(--color-primary-dark);
+}
+
+/* Availability column styling */
+td:nth-child(4) {
+    text-align: center;
+}
+
+/* Hover effects for rows with transition */
+tbody tr:hover td {
+    background-color: var(--color-primary-light);
+    color: var(--text-color-dark);
+    border: 3px solid var(--color-primary);
+}
+
+/* Override background color on hover */
+tbody tr:hover td:first-child {
+    background-color: var(--color-primary-light);
+}
+
+/* Footer styling */
+tfoot {
+    background-color: var(--color-accent-light);
+    font-weight: bold;
+}
+
+tfoot td {
+    border: 1px solid var(--border-color);
+}
+
+/* Media query for small screens already handled by table-container's overflow-x */
+@media (max-width: 768px) {
+    .table-container {
+        margin: var(--spacing-small) 0;
+    }
+    
+    table {
+        min-width: 600px; /* Forces horizontal scrolling on small screens */
+    }
+}
+
+/* Details & Summary styling */
+details {
+    margin-bottom: var(--spacing-small);
+    padding: var(--spacing-small);
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: var(--spacing-small);
+}
+
+details[open] summary {
+    margin-bottom: var(--spacing-small);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Math section styling */
+.math-section {
+    background-color: var(--color-accent-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    margin: var(--spacing-medium) 0;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--color-primary-light);
+}
+
+.math-section h4 {
+    color: var(--color-primary-dark);
+    text-align: center;
+    margin-bottom: var(--spacing-medium);
+}

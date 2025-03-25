@@ -1,0 +1,75 @@
+/* Basic MathML settings */
+math {
+    font-size: 1.3rem;
+    display: block;
+    text-align: center;
+    padding: var(--spacing-medium);
+    margin: var(--spacing-medium) auto;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Variables styling (E, W, k, A) */
+.formula-variable {
+    color: #0066cc; /* Blue color for variables */
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Constants styling (70, 30) */
+.formula-constant {
+    color: #e63946; /* Red color for constants */
+    font-weight: bold;
+}
+
+/* Exponent styling (0.75) */
+.formula-exponent {
+    color: #2a9d8f; /* Teal color for exponents */
+    font-size: 0.8em;
+}
+
+/* Operators styling (=, ×, +) */
+mo {
+    color: #333;
+    padding: 0 0.2em;
+    font-weight: normal;
+}
+
+/* Fraction styling */
+mfrac {
+    font-size: 1.2em;
+    padding: 0.5em 0;
+}
+
+/* Square root styling */
+msqrt {
+    color: #6a994e; /* Green color for square roots */
+    font-weight: bold;
+}
+
+/* Formula explanation text */
+.formula-explanation {
+    font-size: 0.9rem;
+    margin-top: var(--spacing-medium);
+    text-align: center;
+    color: var(--color-primary-dark);
+    line-height: 1.6;
+}
+
+/* Apply variable style in the explanation text */
+.formula-explanation .formula-variable {
+    padding: 0 0.25em;
+    font-size: 1.1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    math {
+        font-size: 1.1rem;
+        padding: var(--spacing-small);
+    }
+    
+    .formula-explanation {
+        font-size: 0.8rem;
+    }
+}

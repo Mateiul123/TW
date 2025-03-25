@@ -1,0 +1,99 @@
+/* Back to Top Button */
+#link-top {
+    /* Fixed positioning */
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 999;
+    
+    /* Circle dimensions */
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    
+    /* Styling */
+    border: 2px dashed #004080;
+    background: linear-gradient(145deg, #004080, #1e90ff, #004080);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+    /* Center content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Transparency */
+    opacity: 0.7;
+    
+    /* Transitions */
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    
+    /* Remove default link styling */
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    
+    /* Container for the arrow that won't rotate */
+    overflow: hidden;
+}
+  
+/* The up arrow */
+#link-top::before {
+    content: "↑";
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.5s ease;
+    display: block;
+    text-align: center;
+    
+    /* Make sure arrow doesn't rotate when container does */
+    position: absolute;
+}
+  
+/* Tooltip text - Updated text */
+#link-top::after {
+    content: "Înapoi la început";
+    position: absolute;
+    white-space: nowrap;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Tooltip styling */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    
+    /* Transition */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+}
+  
+/* Hover effects */
+#link-top:hover {
+    opacity: 1;
+    transform: rotate(360deg);
+}
+  
+#link-top:hover::before {
+    /* Counter-rotate the arrow so it appears to stay still */
+    transform: rotate(-360deg);
+}
+  
+#link-top:hover::after {
+    /* Show the tooltip */
+    opacity: 1;
+    visibility: visible;
+}
+  
+/* Add animation for when user clicks the button */
+#link-top:active {
+    transform: scale(0.95) rotate(360deg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}

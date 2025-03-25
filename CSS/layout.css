@@ -1,0 +1,157 @@
+/* Header */
+header {
+    background-color: var(--header-bg-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-medium);
+    color: var(--text-color-light);
+    margin-bottom: var(--spacing-medium);
+}
+
+main {
+    margin-bottom: var(--spacing-medium);
+}
+
+/* Grid container */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "zone1 zone1 zone1 zone1"
+        "zone5 zone6 zone6 zone7"
+        "zone3 zone3 zone2 zone2"
+        "zone4 zone4 zone2 zone2"
+        "zone8 zone8 zone8 zone8";
+    gap: var(--spacing-large);
+}
+
+/* Add consistent text padding to all content containers */
+.zone-1, .zone-2, .zone-3, .zone-4, .zone-5, .zone-6, .zone-7, .zone-8, 
+p, h1, h2, h3, li, dt, dd {
+    padding: var(--text-padding);
+}
+
+/* Styling for each zone */
+.zone-1 {
+    grid-area: zone1;
+    background-color: var(--color-primary-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    min-height: 300px;
+}
+
+.zone-2 {
+    grid-area: zone2;
+    background-color: var(--color-accent-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.zone-3 {
+    grid-area: zone3;
+    background-color: var(--color-primary-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.zone-4 {
+    grid-area: zone4;
+    background-color: var(--color-primary-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.zone-5 {
+    grid-area: zone5;
+    background-color: var(--color-accent-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.zone-6 {
+    grid-area: zone6;
+    background-color: var(--color-accent-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.zone-7 {
+    grid-area: zone7;
+    background-color: var(--color-primary-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.zone-8 {
+    grid-area: zone8;
+    background-color: var(--color-primary-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--text-color-light);
+    border-top: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-medium);
+}
+
+footer a {
+    color: var(--color-accent-light);
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: var(--color-primary-light);
+    text-decoration: underline;
+}
+
+footer address {
+    margin: var(--spacing-medium) 0;
+}
+
+footer iframe {
+    max-width: 100%;
+    height: 300px;
+    margin: var(--spacing-medium) 0;
+    border-radius: var(--border-radius);
+}
+
+/* Z-pattern layout for zone-1 */
+.z-pattern {
+    display: grid;
+    grid-template-areas:
+        "top-left top-right"
+        "bottom-left bottom-right";
+    gap: var(--spacing-medium);
+    height: 100%;
+}
+
+.z-top-left {
+    grid-area: top-left;
+}
+
+.z-top-right {
+    grid-area: top-right;
+    text-align: center;
+}
+
+.z-bottom-left {
+    grid-area: bottom-left;
+    text-align: center;
+}
+
+.z-bottom-right {
+    grid-area: bottom-right;
+}

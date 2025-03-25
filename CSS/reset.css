@@ -1,0 +1,160 @@
+/* Modern CSS Reset with Variables */
+
+:root {
+    /* Base sizing */
+    --base-font-size: 16px;
+    --base-line-height: 1.5;
+    
+    /* Spacing scale (relative units) */
+    --spacing-xs: 0.25rem;
+    --spacing-s: 0.5rem;
+    --spacing-m: 1rem;
+    --spacing-l: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Typography scale */
+    --text-xs: 0.75rem;
+    --text-s: 0.875rem;
+    --text-m: 1rem;
+    --text-l: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-xxl: 2rem;
+    
+    /* Font weights */
+    --weight-normal: 400;
+    --weight-bold: 700;
+    
+    /* Colors */
+    --color-text: #333;
+    --color-background: #fff;
+    --color-border: #ddd;
+    
+    /* Border radius */
+    --radius-sm: 0.25rem;
+  }
+  
+  /* Box sizing for all elements */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Remove default margin and padding */
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, 
+  p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, 
+  em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, 
+  b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+  table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, 
+  details, embed, figure, figcaption, footer, header, hgroup, menu, nav, 
+  output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+  }
+  
+  /* HTML5 display definitions */
+  article, aside, details, figcaption, figure, footer, header, hgroup, 
+  main, menu, nav, section {
+    display: block;
+  }
+  
+  /* Base HTML elements */
+  html {
+    font-size: var(--base-font-size);
+    line-height: var(--base-line-height);
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  body {
+    font-size: 1rem;
+    line-height: var(--base-line-height);
+    color: var(--color-text);
+    background-color: var(--color-background);
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--weight-bold);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-m);
+  }
+  
+  h1 { font-size: var(--text-xxl); }
+  h2 { font-size: var(--text-xl); }
+  h3 { font-size: var(--text-l); }
+  h4 { font-size: var(--text-m); }
+  h5 { font-size: var(--text-s); }
+  h6 { font-size: var(--text-xs); }
+  
+  /* Paragraphs and spacing */
+  p, ul, ol, dl, blockquote {
+    margin-bottom: var(--spacing-m);
+  }
+  
+  /* Lists */
+  ol, ul {
+    padding-left: var(--spacing-l);
+  }
+  
+  li {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  /* Definition lists */
+  dt {
+    font-weight: var(--weight-bold);
+  }
+  
+  dd {
+    margin-left: var(--spacing-m);
+    margin-bottom: var(--spacing-s);
+  }
+  
+  /* Text styles */
+  b, strong { font-weight: var(--weight-bold); }
+  i, em { font-style: italic; }
+  
+  /* Links */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: var(--spacing-m);
+  }
+  
+  th, td {
+    padding: var(--spacing-s);
+    text-align: left;
+    border: 1px solid var(--color-border);
+  }
+  
+  /* Images and media */
+  img, video, svg {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+  
+  /* Forms */
+  button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+  }
+  
+  /* Remove excess padding in buttons in Firefox */
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
