@@ -1,0 +1,520 @@
+/* Menu styles */
+.main-nav {
+  position: relative;
+  z-index: 100;
+}
+
+.main-nav .menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav .menu .menu-item {
+  position: relative;
+}
+
+.main-nav .menu .menu-item:nth-child(1) > a {
+  padding: 15px 20px;
+}
+
+.main-nav .menu .menu-item:nth-child(2) > a {
+  padding: 15px 25px;
+}
+
+.main-nav .menu .menu-item:nth-child(3) > a {
+  padding: 15px 30px;
+}
+
+.main-nav .menu .menu-item:nth-child(4) > a {
+  padding: 15px 35px;
+}
+
+/* Menu item styling */
+.main-nav .menu .menu-item > a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--text-color-light);
+  text-decoration: none;
+  font-weight: 500;
+  overflow: hidden;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* Enhanced hover effect with internal shadow */
+.main-nav .menu .menu-item > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+  transition: box-shadow 0.3s ease;
+  pointer-events: none;
+}
+
+.main-nav .menu .menu-item > a .fa-home {
+  display: none; /* Hide home icon initially */
+}
+
+.main-nav .menu .menu-item > a:hover {
+  color: var(--color-primary-light);
+}
+
+.main-nav .menu .menu-item > a:hover::before {
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Submenu styling with animations */
+.main-nav .menu .menu-item .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  min-width: 200px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transform-origin: top center;
+  transform: scaleY(0);
+  opacity: 0;
+  max-height: 0;
+  transition: transform 0.3s ease, 
+             opacity 0.3s ease,
+             max-height 0.6s ease;
+  overflow: hidden;
+}
+
+.main-nav .menu .menu-item .submenu .submenu-item a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: var(--text-color-dark);
+  text-decoration: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* Enhanced arrow animation */
+.main-nav .menu .menu-item .submenu .submenu-item a .submenu-arrow {
+  margin-right: 10px;
+  transform: translateX(-30px);
+  opacity: 0;
+  transition: transform 0.4s ease-out, opacity 0.4s ease;
+}
+
+.main-nav .menu .menu-item .submenu .submenu-item a:hover {
+  background-color: var(--color-accent-light);
+}
+
+.main-nav .menu .menu-item .submenu .submenu-item a:hover .submenu-arrow {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Show submenu on hover */
+.main-nav .menu .menu-item:hover > .submenu {
+  transform: scaleY(1);
+  opacity: 1;
+  max-height: 500px;
+}
+
+/* Hide hamburger elements by default (large screens) */
+.hamburger-toggle, .hamburger-button {
+  display: none;
+}
+
+/* Hamburger icon styling with 3 separate elements */
+.hamburger-icon-container {
+  position: relative;
+  width: 30px;
+  height: 24px;
+  display: block;
+}
+
+.hamburger-line {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-color-light);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger-line-top {
+  top: 0;
+}
+
+.hamburger-line-middle {
+  top: 10px;
+}
+
+.hamburger-line-bottom {
+  top: 20px;
+}
+
+/* Animation for hamburger to X transformation */
+.hamburger-toggle:checked ~ .hamburger-button .hamburger-line-top {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-toggle:checked ~ .hamburger-button .hamburger-line-middle {
+  opacity: 0;
+}
+
+.hamburger-toggle:checked ~ .hamburger-button .hamburger-line-bottom {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Medium screen adaptations (768px - 1024px) */
+@media (max-width: 1024px) {
+  .main-nav .menu .menu-item > a {
+    font-size: 0.9rem;
+    padding: 15px 15px; /* Standardize padding for medium screens */
+  }
+  
+  .main-nav .menu .menu-item > a .menu-text {
+    display: none;
+  }
+  
+  .main-nav .menu .menu-item > a .fa-home {
+    display: inline-block;
+    font-size: 1.2rem;
+  }
+}
+
+/* Small screen hamburger menu (under 768px) */
+@media (max-width: 768px) {
+  header {
+    position: relative;
+  }
+  
+  
+  header h1 {
+    margin-right: 50px; /* Space for hamburger */
+  }
+  
+  .hamburger-button {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 200;
+  }
+  
+  .hamburger-toggle {
+    display: none;
+  }
+
+  .hamburger-line {
+    animation: hamburgerEntrance 1s ease-out forwards;
+    animation-play-state: paused;
+  }
+  
+  .hamburger-line-top {
+    animation-delay: 0ms;
+  }
+  
+  .hamburger-line-middle {
+    animation-delay: 300ms;
+  }
+  
+  .hamburger-line-bottom {
+    animation-delay: 600ms;
+  }
+  
+  /* Start animation when page loads */
+  body:not(.no-js) .hamburger-line {
+    animation-play-state: running;
+  }
+  
+  .hamburger-toggle:checked ~ .main-nav {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--header-bg-color);
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, 
+                opacity 0.3s ease, 
+                visibility 0.3s ease;
+  }
+  
+  .main-nav .menu {
+    flex-direction: column;
+  }
+  
+  .main-nav .menu .menu-item {
+    width: 100%;
+  }
+  
+  .main-nav .menu .menu-item > a {
+    padding: 15px 20px;
+    width: 100%;
+  }
+  
+  .main-nav .menu .menu-item > a .menu-text {
+    display: inline;
+  }
+  
+  .main-nav .menu .menu-item > a .fa-home {
+    margin-left: 10px;
+    display: inline-block;
+  }
+  
+  /* Submenu styling for mobile */
+  .main-nav .menu .menu-item .submenu {
+    position: static;
+    transform: scaleY(0);
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  .main-nav .menu .menu-item .submenu .submenu-item a {
+    padding-left: 40px;
+  }
+  
+  .main-nav .menu .menu-item .submenu .submenu-item a .submenu-arrow {
+    display: none; /* Remove arrow animation on mobile */
+  }
+  
+  .main-nav .menu .menu-item .submenu .submenu-item:hover a {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Enhanced mobile submenu animation */
+  .main-nav .menu .menu-item:hover > .submenu {
+    animation: expandSubmenu 0.5s ease forwards;
+  }
+  
+  @keyframes expandSubmenu {
+    from {
+      opacity: 0;
+      transform: scaleY(0.5);
+      max-height: 0;
+    }
+    to {
+      opacity: 1;
+      transform: scaleY(1);
+      max-height: 500px;
+    }
+  }
+}
+
+/* Hamburger icon animations */
+@keyframes hamburgerEntrance {
+  0% {
+    transform: translateX(30px) rotate(90deg);
+    opacity: 0;
+    background-color: var(--color-accent);
+  }
+  50% {
+    transform: translateX(0) rotate(180deg) scaleX(1.5);
+    opacity: 0.7;
+    background-color: var(--color-primary);
+  }
+  100% {
+    transform: translateX(0) rotate(360deg);
+    opacity: 1;
+    background-color: var(--text-color-light);
+  }
+}
+
+/* Apply staggered animations to hamburger lines on small screens */
+@media (max-width: 768px) {
+  /* First line animation */
+  .hamburger-line-top {
+    animation: hamburgerEntrance 1s ease-out forwards;
+    animation-delay: 0ms;
+  }
+  
+  /* Second line animation */
+  .hamburger-line-middle {
+    animation: hamburgerEntrance 1s ease-out forwards;
+    animation-delay: 300ms;
+  }
+  
+  /* Third line animation */
+  .hamburger-line-bottom {
+    animation: hamburgerEntrance 1s ease-out forwards;
+    animation-delay: 600ms;
+  }
+  
+  /* Hamburger to X transformation */
+  .hamburger-toggle:checked ~ .hamburger-button .hamburger-line-top {
+    animation: none;
+    transform: rotate(45deg) translate(6px, 6px);
+    background-color: var(--color-primary-light);
+  }
+  
+  .hamburger-toggle:checked ~ .hamburger-button .hamburger-line-middle {
+    animation: none;
+    opacity: 0;
+  }
+  
+  .hamburger-toggle:checked ~ .hamburger-button .hamburger-line-bottom {
+    animation: none;
+    transform: rotate(-45deg) translate(7px, -7px);
+    background-color: var(--color-primary-light);
+  }
+}
+
+/* Print styles */
+@media print {
+  /* General page layout for printing */
+  body {
+    background-color: white;
+    color: black;
+    font-family: 'Times New Roman', serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Hide media elements and non-essential content */
+  img, video, iframe, figure, figcaption, .button, #link-top {
+    display: none !important;
+  }
+  
+  /* Restructure grid layout for printing */
+  .grid-container {
+    display: block !important;
+  }
+  
+  /* Format links as normal text */
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* Center title on first page */
+  header h1 {
+    text-align: center;
+    font-size: 24pt;
+    margin: 2cm 0 1cm;
+  }
+  
+  /* Format menu as a vertical list */
+  .main-nav {
+    display: block;
+    margin: 0 0 2cm;
+  }
+  
+  .main-nav .menu {
+    display: block;
+    list-style-type: disc;
+    margin-left: 2cm;
+  }
+  
+  .main-nav .menu .menu-item {
+    display: block;
+    margin-bottom: 0.5cm;
+  }
+  
+  /* Hide submenu items */
+  .main-nav .menu .submenu {
+    display: none;
+  }
+  
+  /* Create page breaks */
+  header::after {
+    content: "";
+    display: block;
+    page-break-after: always;
+  }
+  
+  footer::before {
+    content: "";
+    display: block;
+    page-break-before: always;
+  }
+  
+  /* Format the banner in footer */
+  #banner-print {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    border: 4px inset black;
+    padding: 10px;
+    font-weight: bold;
+    page-break-before: always;
+    page-break-after: avoid;
+  }
+  
+  /* Create the watermark */
+  @page {
+    margin: 2cm;
+    
+    @bottom-right {
+      content: "Pop\A Matei";
+      width: 4cm;
+      height: 1cm;
+      border: 3px solid black;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      opacity: 0.4;
+      white-space: pre; /* Preserves the line break in content */
+    }
+  }
+  
+  /* Left pages margin */
+  @page :left {
+    margin-left: 3cm;
+    margin-right: 1cm;
+  }
+  
+  /* Right pages margin */
+  @page :right {
+    margin-left: 1cm;
+    margin-right: 3cm;
+  }
+  
+  /* Hide hamburger menu elements */
+  .hamburger-button, .hamburger-toggle {
+    display: none !important;
+  }
+  
+  /* Ensure sections are not split across pages where possible */
+  section {
+    page-break-inside: avoid;
+  }
+  
+  /* Enhance table readability for print */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid black;
+  }
+  
+  /* Remove background colors */
+  .zone-1, .zone-2, .zone-3, .zone-4, .zone-5, .zone-6, .zone-7, .zone-8,
+  th, td, header, footer {
+    background-color: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+}

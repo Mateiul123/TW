@@ -1,0 +1,366 @@
+// Variables
+$menu-bg-color: var(--header-bg-color);
+$menu-text-color: var(--text-color-light);
+$menu-hover-color: var(--color-primary-light);
+$menu-active-color: var(--color-accent);
+$submenu-bg-color: rgba(255, 255, 255, 0.95);
+$submenu-text-color: var(--text-color-dark);
+$submenu-hover-color: var(--color-accent-light);
+$transition-time: 0.3s;
+$hamburger-color: var(--text-color-light);
+
+// Mixins
+@mixin transition($properties...) {
+  transition-property: $properties;
+  transition-duration: $transition-time;
+  transition-timing-function: ease;
+}
+
+@mixin menu-item-padding($index) {
+  padding: 15px 20px + ($index * 5px);
+}
+
+// Hide hamburger elements by default (large screens)
+.hamburger-toggle, .hamburger-button {
+  display: none;
+}
+
+// Menu styling
+.main-nav {
+  position: relative;
+  z-index: 100;
+  
+  .menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    .menu-item {
+      position: relative;
+      
+      // Generate varied padding for menu items
+      @for $i from 0 through 3 {
+        &:nth-child(#{$i + 1}) > a {
+          @include menu-item-padding($i);
+        }
+      }
+      
+      > a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: $menu-text-color;
+        text-decoration: none;
+        font-weight: 500;
+        overflow: hidden;
+        @include transition(color);
+        
+        // Enhanced hover effect with internal shadow
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+          transition: box-shadow $transition-time ease;
+          pointer-events: none;
+        }
+        
+        .fa-home {
+          display: none; // Hide home icon initially
+        }
+        
+        &:hover {
+          color: $menu-hover-color;
+          
+          &::before {
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+      
+      // Submenu styling with enhanced animations
+      .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $submenu-bg-color;
+        min-width: 200px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        transform-origin: top center;
+        transform: scaleY(0);
+        opacity: 0;
+        max-height: 0;
+        transition: transform $transition-time ease, 
+                   opacity $transition-time ease,
+                   max-height 0.6s ease;
+        overflow: hidden;
+        
+        .submenu-item {
+          a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            color: $submenu-text-color;
+            text-decoration: none;
+            @include transition(background-color);
+            
+            // Enhanced arrow animation
+            .submenu-arrow {
+              margin-right: 10px;
+              transform: translateX(-30px);
+              opacity: 0;
+              transition: transform 0.4s ease-out, opacity 0.4s ease;
+            }
+            
+            &:hover {
+              background-color: $submenu-hover-color;
+              
+              .submenu-arrow {
+                transform: translateX(0);
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+      
+      // Show submenu on hover with animation
+      &:hover {
+        > .submenu {
+          transform: scaleY(1);
+          opacity: 1;
+          max-height: 500px;
+        }
+      }
+    }
+  }
+}
+
+// Medium screen adaptations (768px - 1024px)
+@media (max-width: 1024px) {
+  .main-nav .menu {
+    .menu-item {
+      > a {
+        font-size: 0.9rem;
+        padding: 15px 15px; // Standardize padding for medium screens
+        
+        // Show home icon, hide text for home item
+        .menu-text {
+          display: none;
+        }
+        
+        .fa-home {
+          display: inline-block;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+// Small screen hamburger menu (under 768px)
+@media (max-width: 768px) {
+  header {
+    position: relative;
+    
+    h1 {
+      margin-right: 50px; // Space for hamburger
+    }
+  }
+  
+  .hamburger-toggle {
+    display: none;
+    
+    &:checked {
+      // Show menu when checked
+      ~ .main-nav {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      // Animate hamburger icon
+      ~ .hamburger-button .hamburger-icon {
+        background-color: transparent;
+        
+        &:before {
+          transform: rotate(45deg) translate(5px, 5px);
+          transition: transform 0.4s ease;
+        }
+        
+        &:after {
+          transform: rotate(-45deg) translate(7px, -7px);
+          transition: transform 0.4s ease;
+        }
+      }
+    }
+  }
+  
+  .hamburger-button {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 200;
+    
+    .hamburger-icon {
+      position: absolute;
+      top: 15px;
+      width: 100%;
+      height: 3px;
+      background-color: $hamburger-color;
+      @include transition(background-color);
+      
+      &:before, &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $hamburger-color;
+        @include transition(transform);
+      }
+      
+      &:before {
+        top: -10px;
+      }
+      
+      &:after {
+        top: 10px;
+      }
+    }
+  }
+
+  
+  
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $menu-bg-color;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform $transition-time ease, 
+                opacity $transition-time ease, 
+                visibility $transition-time ease;
+    
+    .menu {
+      flex-direction: column;
+      
+      .menu-item {
+        width: 100%;
+        
+        > a {
+          padding: 15px 20px;
+          width: 100%;
+          
+          // Restore home text in hamburger menu
+          .menu-text {
+            display: inline;
+          }
+          
+          .fa-home {
+            margin-left: 10px;
+            display: inline-block;
+          }
+        }
+        
+        // Submenu styling for mobile
+        .submenu {
+          position: static;
+          transform: scaleY(0);
+          max-height: 0;
+          overflow: hidden;
+          
+          .submenu-item {
+            a {
+              padding-left: 40px;
+              
+              .submenu-arrow {
+                display: none; // Remove arrow animation on mobile
+              }
+            }
+            
+            &:hover {
+              a {
+                box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+              }
+            }
+          }
+        }
+        
+        // Enhanced mobile submenu animation
+        &:hover {
+          > .submenu {
+            animation: expandSubmenu 0.5s ease forwards;
+          }
+        }
+      }
+    }
+  }
+  
+  // Keyframe animation for mobile submenu
+  @keyframes expandSubmenu {
+    from {
+      opacity: 0;
+      transform: scaleY(0.5);
+      max-height: 0;
+    }
+    to {
+      opacity: 1;
+      transform: scaleY(1);
+      max-height: 500px;
+    }
+  }
+}
+
+/* Add this to your menu.scss file - this will be compiled into menu.css */
+
+// Hamburger entry animation keyframes
+@keyframes hamburgerEntrance {
+    0% {
+      transform: translateX(30px) rotate(90deg);
+      opacity: 0;
+      background-color: var(--text-color-light);
+    }
+    50% {
+      transform: translateX(0) rotate(180deg) scaleX(1.5);
+      opacity: 0.7;
+      background-color: var(--color-accent);
+    }
+    100% {
+      transform: translateX(0) rotate(360deg);
+      opacity: 1;
+      background-color: var(--text-color-light);
+    }
+  }
+  
+  // Generate staggered delays using a for loop
+  @for $i from 0 through 2 {
+    .hamburger-line:nth-child(#{$i + 1}) {
+      animation-delay: $i * 300ms;
+    }
+  }
+  
+  // Apply animation to hamburger lines on small screens
+  @media (max-width: 768px) {
+    .hamburger-line {
+      animation: hamburgerEntrance 1s ease-out forwards;
+      animation-play-state: paused;
+    }
+    
+    // Start animation when page loads
+    body:not(.no-js) .hamburger-line {
+      animation-play-state: running;
+    }
+  }

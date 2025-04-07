@@ -1,0 +1,140 @@
+@media print {
+    /* General page layout for printing */
+    body {
+        background-color: white;
+        color: black;
+        font-family: 'Times New Roman', serif;
+        font-size: 12pt;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Hide media elements and non-essential content */
+    img, video, iframe, figure, figcaption, .button, #link-top {
+        display: none !important;
+    }
+    
+    /* Restructure grid layout for printing */
+    .grid-container {
+        display: block !important;
+    }
+    
+    /* Format links as normal text */
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    /* Center title on first page */
+    header h1 {
+        text-align: center;
+        font-size: 24pt;
+        margin: 2cm 0 1cm;
+    }
+    
+    /* Format menu as a vertical list */
+    .main-nav {
+        display: block;
+        margin: 0 0 2cm;
+    }
+    
+    .main-nav .menu {
+        display: block;
+        list-style-type: disc;
+        margin-left: 2cm;
+    }
+    
+    .main-nav .menu .menu-item {
+        display: block;
+        margin-bottom: 0.5cm;
+    }
+    
+    /* Hide submenu items */
+    .main-nav .menu .submenu {
+        display: none;
+    }
+    
+    /* Create page breaks */
+    header::after {
+        content: "";
+        display: block;
+        page-break-after: always;
+    }
+    
+    footer::before {
+        content: "";
+        display: block;
+        page-break-before: always;
+    }
+    
+    /* Format the banner in footer */
+    #banner-print {
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+        border: 4px inset black;
+        padding: 10px;
+        font-weight: bold;
+        page-break-before: always;
+        page-break-after: avoid;
+    }
+    
+    /* Create the watermark */
+    @page {
+        margin: 2cm;
+        
+        @bottom-right {
+            content: "Pop\A Matei";
+            width: 4cm;
+            height: 1cm;
+            border: 3px solid black;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            opacity: 0.4;
+            white-space: pre; /* Preserves the line break in content */
+        }
+    }
+    
+    /* Left pages margin */
+    @page :left {
+        margin-left: 3cm;
+        margin-right: 1cm;
+    }
+    
+    /* Right pages margin */
+    @page :right {
+        margin-left: 1cm;
+        margin-right: 3cm;
+    }
+    
+    /* Hide hamburger menu elements */
+    .hamburger-button, .hamburger-toggle {
+        display: none !important;
+    }
+    
+    /* Ensure sections are not split across pages where possible */
+    section {
+        page-break-inside: avoid;
+    }
+    
+    /* Enhance table readability for print */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th, td {
+        border: 1px solid black;
+    }
+    
+    /* Remove background colors */
+    .zone-1, .zone-2, .zone-3, .zone-4, .zone-5, .zone-6, .zone-7, .zone-8,
+    th, td, header, footer {
+        background-color: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+}

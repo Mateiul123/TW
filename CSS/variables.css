@@ -29,6 +29,12 @@
     /* Effect variables */
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
+
+    --text-color-dark: #333333;
+    --text-color-light: #ffffff;
+    --color-primary-light: #8ED28E;
+    --color-accent-light: #F5EFE0;
+    --header-bg-color: #5EB95E;
     
     /* Font size variables for responsive text */
     --base-font-size: 16px;

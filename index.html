@@ -23,8 +23,11 @@
     <link rel="stylesheet" href="CSS/responsive.css">
     <!-- General Styles -->
     <link rel="stylesheet" href="CSS/general.css">
+    <!--Menu Styles-->
+    <link rel="stylesheet" href="CSS/menu.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/print.css" media="print">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Favicon -->
@@ -34,20 +37,37 @@
     <link rel="icon" type="image/png" sizes="16x16" href="resurse/ico/favicon-16x16.png">
     <link rel="manifest" href="resurse/ico/site.webmanifest">
 </head>
-<body>
+<body >
     <header>
         <h1><i class="fas fa-paw"></i> 4Pets</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Acasa</a>
-                    <ul>
-                        <li><a href="#produse">Produse</a></li>
-                        <li><a href="#despre-noi">Despre noi</a></li>
-                        <li><a href="#intrebari">Întrebări frecvente</a></li>
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
+        <label for="hamburger-toggle" class="hamburger-button">
+            <div class="hamburger-icon-container">
+                <span class="hamburger-line hamburger-line-top"></span>
+                <span class="hamburger-line hamburger-line-middle"></span>
+                <span class="hamburger-line hamburger-line-bottom"></span>
+            </div>
+        </label>
+        <nav class="main-nav">
+            <ul class="menu">
+                <li class="menu-item home-item">
+                    <a href="index.html"><span class="menu-text">Acasa</span><i class="fas fa-home"></i></a>
+                    <ul class="submenu section-submenu">
+                        <li class="submenu-item"><a href="#produse"><i class="fas fa-arrow-right submenu-arrow"></i>Produse</a></li>
+                        <li class="submenu-item"><a href="#despre-noi"><i class="fas fa-arrow-right submenu-arrow"></i>Despre noi</a></li>
+                        <li class="submenu-item"><a href="#intrebari"><i class="fas fa-arrow-right submenu-arrow"></i>Întrebări frecvente</a></li>
                     </ul>
                 </li>
-                <li><a href="produse.html">Produse</a></li>
-                <li><a href="despre.html">Despre noi</a></li>
+                <li class="menu-item">
+                    <a href="produse.html">Produse</a>
+                    <ul class="submenu">
+                        <li class="submenu-item"><a href="produse-caini.html"><i class="fas fa-arrow-right submenu-arrow"></i>Produse câini</a></li>
+                        <li class="submenu-item"><a href="produse-pisici.html"><i class="fas fa-arrow-right submenu-arrow"></i>Produse pisici</a></li>
+                        <li class="submenu-item"><a href="produse-pasari.html"><i class="fas fa-arrow-right submenu-arrow"></i>Produse păsări</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item"><a href="despre.html">Despre noi</a></li>
+                <li class="menu-item"><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -259,7 +279,9 @@
         
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8455262214805!2d26.099139000000002!3d44.435478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFacultatea%20de%20Matematica%20si%20Informatica!5e0!3m2!1sen!2sro!4v1653025599049!5m2!1sen!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         
+        <p id="banner-print">Acesta este un proiect școlar!</p>
         <p><small>&copy; <time datetime="2025-03-03">3 Martie 2025</time>, Toate drepturile rezervate.</small></p>
     </footer>
+
 </body>
 </html>
