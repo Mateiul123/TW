@@ -1,0 +1,109 @@
+DOCUMENTAȚIE TASKURI - TW
+Nume student: Matei Pop
+Proiect: 4Pets
+
+Notă:
+Acest fișier se completează pe parcursul semestrului pentru taskurile care cer descriere în documentație.
+
+==================================================
+ETAPA 1 - Prima pagină HTML (index.html)
+==================================================
+
+1) Structură de bază document
+- Am creat pagina index.html cu doctype și limbă setată la română.
+- Fișier: index.html
+
+2) Head (title + meta)
+- Am adăugat title relevant pentru tema site-ului.
+- Am adăugat meta pentru: charset, author, keywords, description.
+- Am adăugat și meta msapplication-TileColor pentru favicon transparent.
+
+3) Cuvinte cheie în conținut
+- Cuvintele cheie din meta keywords apar în textul paginii, în contexte relevante.
+- Exemple: pet shop, animale de companie, hrană animale, accesorii animale, jucării animale.
+
+4) Resurse + favicon
+- Resursele non-HTML sunt organizate în folderul resurse.
+- Favicon-ul este în resurse/ico și este legat în head (ico, svg, png, apple-touch-icon, manifest).
+
+5) Organizare semantică
+- Body este împărțit în: header, main, footer.
+
+6) Secționare + imbricare
+- Am folosit secțiuni semantice și imbricare de secțiuni cu heading-uri corespunzătoare nivelului.
+- Am folosit și aside pentru conținut secundar.
+
+7) Hgroup
+- Titlul principal și subtitlul din header sunt grupate cu hgroup.
+
+8) Navigație
+- În header există nav cu listă neordonată.
+- Opțiunea Acasă conține subopțiuni (listă imbricată) către secțiuni din pagină prin id.
+
+9) Taguri de grupare text
+- Am folosit p, blockquote și dl în secțiuni relevante.
+
+10) Evenimente cu date/oră
+- Secțiunea de evenimente folosește listă (ul).
+- Fiecare eveniment include time cu datetime + nume în tagul b + descriere.
+
+11) Imagine cu picture/figure
+- Imaginea este integrată cu picture + figure + figcaption.
+- Are atribut title pe imagine.
+- Sunt definite surse diferite pentru ecrane mici/medii/mari.
+
+12) Cerințe de marcare în text (minimum 3, depășite)
+- Folosite: b, i, strong, s + ins, abbr, dfn, q, cite.
+
+13) Linkuri cerute
+- Link extern relevant în tab nou (target="_blank").
+- Link extern către element cu id (URL lung) + wbr.
+- Link în footer către începutul paginii.
+- Link care conține imagine (click deschide imaginea mare în tabul curent).
+- Link de download cu nume diferit la descărcare.
+
+14) Iframe YouTube
+- Există iframe cu videoclip embedded.
+- Deasupra lui există 3 linkuri către videoclipuri YouTube care se deschid în iframe.
+
+15) Tabel
+- Tabel semantic cu caption, thead, tbody, tfoot.
+- Cel puțin 5 rânduri și 4 coloane.
+- Include colspan/rowspan.
+
+16) Details/Summary
+- Sunt adăugate mai multe blocuri details + summary (FAQ).
+
+17) Meter
+- Folosite 2 taguri meter cu atribute complete (value, min, max, low, high, optimum):
+  - un caz cu valoare mică (sub low)
+  - un caz cu valoare mare (peste high)
+
+18) Contact în footer (address)
+- Telefon (tel:)
+- Adresă fictivă pe mai multe rânduri (<br>) cu link către Google Maps (FMI)
+- E-mail (mailto:)
+- Link WhatsApp (wa.me)
+
+19) Copyright
+- Informație în tagul small cu simbol &copy;.
+- Data este în limba română, în tagul time cu datetime doar dată.
+
+20) Validare
+- Fișierul index.html este valid sintactic în forma curentă (fără cod injectat de extensii).
+- Observație: la validare trebuie folosit fișierul original din proiect sau URL-ul Live Server, nu varianta salvată din browser cu folder _files.
+
+--------------------------------------------------
+BONUSURI FOLOSITE (ETAPA 1)
+--------------------------------------------------
+- Bonus MathML: formulă inclusă în pagină.
+- Bonus afișare PDF în pagină: adăugat cu tagul object, cu fallback link.
+- Bonus hartă de imagini: adăugată cu map + area pentru navigare internă pe secțiuni.
+- Bonus Google Maps iframe: locația Facultății de Matematică și Informatică afișată în footer.
+- Bonus playlist YouTube automat: adăugat iframe cu parametri în URL (autoplay, controls, loop, playlist cu minim 2 videoclipuri).
+
+==================================================
+ȘABLON PENTRU ETAPELE URMĂTOARE
+==================================================
+
+
