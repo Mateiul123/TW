@@ -1,6 +1,7 @@
 DOCUMENTAȚIE TASKURI - TW
 Nume student: Matei Pop
 Proiect: 4Pets
+Grupa: 461
 
 Notă:
 Acest fișier se completează pe parcursul semestrului pentru taskurile care cer descriere în documentație.
@@ -90,7 +91,7 @@ ETAPA 1 - Prima pagină HTML (index.html)
 - Data este în limba română, în tagul time cu datetime doar dată.
 
 20) Validare
-- Fișierul index.html este valid sintactic în forma curentă (fără cod injectat de extensii).
+- Fișierul index.html este valid sintactic în forma curentă .
 - Observație: la validare trebuie folosit fișierul original din proiect sau URL-ul Live Server, nu varianta salvată din browser cu folder _files.
 
 --------------------------------------------------
@@ -107,36 +108,156 @@ REFERINȚE RAPIDE PENTRU PREZENTARE (ETAPA 1)
 ==================================================
 Fișier principal: index.html
 
-1) Structură de bază document -> linii 1-3, 284-285
+1) Structură de bază document -> linii 1-3, 337-338
 2) Head (title + meta) -> linii 4-10
-3) Cuvinte cheie în conținut -> linii 46-48, 55-56, 58-61, 64
+3) Cuvinte cheie în conținut -> linii 53-58, 65, 69-74, 97-128
 4) Resurse + favicon -> linii 12-16
-5) Organizare semantică -> linii 19, 43, 263
-6) Secționare + imbricare -> linii 44-66, 53-65, 68-80, 82-260, 189-203
-7) Hgroup -> linii 20-23
-8) Navigație -> linii 25-40
-9) Taguri de grupare text -> linii 49-51 (blockquote), 57-62 (dl), 46-48 + 55-56 + 63-64 (p)
-10) Evenimente cu date/oră -> linii 173-179
-11) Imagine cu picture/figure -> linii 84-91
-12) Cerințe de marcare în text -> linii 46-48, 55-56, 63-64, 249
-13) Linkuri cerute -> linii 72, 76-78, 93-95, 169, 264
-14) Iframe YouTube + linkuri control -> linii 208-220
-15) Tabel -> linii 113-165
-16) Details/Summary -> linii 191-202
-17) Meter -> linii 181-186
-18) Contact în footer (address) -> linii 265-270
-19) Copyright -> linia 282
+5) Organizare semantică -> linii 25, 50, 311
+6) Secționare + imbricare -> linii 51-80, 82-171, 174-307
+7) Hgroup -> linii 26-29
+8) Navigație -> linii 31-47
+9) Taguri de grupare text -> linii 62-65 (blockquote), 70-75 (dl), 53-58 + 65 + 76-77 (p)
+10) Evenimente cu date/oră -> linii 218-224
+11) Imagine cu picture/figure -> linii 188-197
+12) Cerințe de marcare în text -> linii 53-58, 65, 69, 76-77, 287-293
+13) Linkuri cerute -> linii 178, 182-184, 200-202, 142, 312
+14) Iframe YouTube + linkuri control -> linii 252-269
+15) Tabel -> linii 82-138
+16) Details/Summary -> linii 236-249
+17) Meter -> linii 226-233
+18) Contact în footer (address) -> linii 311-318
+19) Copyright -> liniile 330-331
 20) Validare -> validat pe fișierul index.html (nu are o linie dedicată)
 
 BONUSURI - linii rapide
-- MathML -> linii 234-249
-- PDF în pagină (object) -> linii 252-259
-- Hartă de imagini (map/area) -> linii 99-108
-- Google Maps iframe -> linii 272-280
-- Playlist YouTube automat -> linii 222-231
+- MathML -> linii 282-297
+- PDF în pagină (object) -> linii 300-306
+- Hartă de imagini (map/area) -> linii 206-215
+- Google Maps iframe -> linii 321-328
+- Playlist YouTube automat -> linii 271-279
 
 ==================================================
 ȘABLON PENTRU ETAPELE URMĂTOARE
 ==================================================
 
+==================================================
+ETAPA 2 - CSS, schema cromatica si layout responsive
+==================================================
 
+1) Schema cromatica
+- Culoare de baza aleasa: verde petrol #2f6f63.
+- Schema folosita in CSS:
+  - #2f6f63 - culoare principala, folosita pentru zone importante si taburi.
+  - #17443e - varianta inchisa pentru header, footer, text accentuat si contrast.
+  - #8fc9b5 - verde menta pentru accente calme si borduri secundare.
+  - #d99b32 - accent amber pentru highlight-uri si elemente care trebuie observate.
+  - #f3d9a2 - accent deschis pentru hover si suprafete calde.
+  - #f6f2e8 - fundal cald al paginii.
+  - #ffffff si #e7f3ee - suprafete pentru zone de continut.
+- Motivatie: tema 4Pets are nevoie de o atmosfera de incredere, calm si grija. Verdele petrol si verdele menta sugereaza sanatate, siguranta si echilibru, potrivite pentru produse de ingrijire animale. Accentul amber adauga energie si caldura fara sa aglomereze vizual pagina.
+- Variabilele de culoare sunt definite in selectorul body din CSS/style.css si sunt folosite in restul CSS-ului prin var(...).
+
+2) Layout responsive
+- Main-ul paginii foloseste CSS Grid cu grid-template-areas.
+- Pe ecran mare, zonele sunt organizate dupa harta ceruta: zona 1 pe toata latimea, zona 2 in stanga sus, zona 8 in dreapta pe mai multe randuri, iar zonele 3, 5, 6, 4 si 7 completeaza partea inferioara.
+- Pe ecran mediu, layoutul trece la doua coloane.\
+- Pe ecran mic, layoutul trece la o singura coloana, fara scrollbar orizontal pe viewport.
+- Font-size-ul html scade de la ecran mare la mediu si mic, iar body are tranzitie pentru schimbarea dimensiunii textului.
+- Principii de design folosite: ierarhie vizuala prin zona 1 mai ampla, contrast intre header/footer si continut, proximitate prin gruparea zonelor similare, aliniere prin grid, consistenta prin aceleasi variabile de spacing si padding.
+
+3) Design rudimentar
+- Spatierea laterala a paginii este controlata prin variabila --spatiere-pagina si scade pe ecran mediu si mic.
+- Gap-ul gridului este controlat prin --spatiere-grid si scade responsive.
+- Zonele sunt izolate vizual prin background diferit, border, border-radius si box-shadow.
+- Padding-ul zonelor este controlat prin --padding-zona.
+- Elementele media au width in procente, min-width si max-width, ajustate pe ecran mic.
+
+4) Iconuri si font extern
+- Font extern: Nunito prin Google Fonts.
+- Icon static Font Awesome: labuta din zona de prezentare.
+- Icon animat Font Awesome: osul din zona de anunturi, animat discret pe ecrane mari/medii.
+
+5) Stilizare tabel
+- Tabelul are caption pozitionat sub tabel prin caption-side: bottom.
+- Borderele dintre randuri alterneaza culorile prin pseudoclase nth-child.
+- Borderele interioare au 1px, iar borderul exterior este inset si are grosime peste 5px.
+- La hover pe rand apare gradual un outline de culoare transparenta cu alpha 0.7, cu tranzitie de 0.5s.
+- Pe ecrane mici si medii, containerul tabelului permite scroll orizontal doar pentru tabel.
+
+6) Stilizare taburi iframe
+- Linkurile iframe sunt grupate in containerul taburi-iframe, pe care este aplicat display:flex.
+- Taburile sunt plasate langa iframe, cu forma de butoane lipite, border, fundal si tranzitie.
+- Efectul vizual urmareste animatia din exemplu: la hover tabul se lungeste spre dreapta si isi schimba culoarea, iar culorile sunt adaptate schemei cromatice a site-ului 4Pets.
+
+7) Link top
+- Linkul catre inceputul paginii este fix in dreapta jos.
+- Nu foloseste imagini; forma rotunda si sageata sunt realizate din CSS si caracterul ↑.
+- Butonul are opacity subunitar si devine opac la hover.
+- Borderul este impartit vizual pe laturi deschise si inchise, are box-shadow intern, iar la hover cercul se roteste.
+- Sageata ramane nemiscata deoarece rotirea este aplicata doar cercului decorativ, iar efectul de blur/text-shadow dispare la hover.
+- Tooltipul apare la hover prin pseudo-element CSS.
+
+8) Bonusuri
+- Reset CSS in fisier separat: CSS/reset.css.
+- Formula MathML are stilizare diferita pe identificatori si numere in CSS/style.css.
+
+==================================================
+REFERINTE RAPIDE PENTRU PREZENTARE (ETAPA 2)
+==================================================
+Fisiere principale: index.html, CSS/style.css, CSS/reset.css
+
+1) Repository local + GitHub
+- Repository local existent: folderul contine director .git.
+- Remote GitHub configurat: origin -> https://github.com/Mateiul123/TW.git
+
+2) Schema cromatica
+- Linkuri catre CSS si resurse externe in pagina -> index.html, linii 17-22
+- Variabile de culoare si spacing definite in body -> CSS/style.css, linii 1-21
+- Folosirea variabilelor de culoare in restul CSS-ului -> CSS/style.css, linii 23-690
+
+3) Layout responsive
+- Zonele HTML 1-8 din main -> index.html, linii 50-171
+- Grid principal cu grid-template-areas pe ecran mare -> CSS/style.css, linii 183-194
+- Atribuirea zonelor in grid -> CSS/style.css, linii 205-249
+- Layout pentru ecran mediu -> CSS/style.css, linii 551-594
+- Layout pe o coloana pentru ecran mic -> CSS/style.css, linii 596-690
+- Scaderea font-size-ului pe ecrane medii si mici -> CSS/style.css, linii 552-553 si 597-598
+
+4) Design rudimentar
+- Spatiere laterala si gap prin variabile -> CSS/style.css, linii 17-19, 192-193, 556-558 si 601-604
+- Izolare vizuala header/footer prin background, border, border-radius, box-shadow -> CSS/style.css, linii 68-76
+- Izolare vizuala zone grid prin background, border, border-radius, box-shadow -> CSS/style.css, linii 196-202
+- Media responsive cu width procentual, min-width si max-width -> CSS/style.css, linii 38-65 si 638-647
+- Padding comun pentru zone -> CSS/style.css, linii 19, 71, 197 si 601-604
+
+5) Iconuri si font extern
+- Font extern Google si Font Awesome CDN -> index.html, linii 17-20
+- Icon static Font Awesome -> index.html, linia 53; CSS/style.css, linii 236-239
+- Icon animat Font Awesome -> index.html, linia 153; CSS/style.css, linii 257-265
+
+6) Stilizare tabel
+- Structura tabel, caption, minim 4 coloane, colspan si rowspan -> index.html, linii 82-138
+- Container cu overflow orizontal pentru tabel -> CSS/style.css, linii 287-290, 587-592 si 670-672
+- Caption jos, border inset si borduri de 1px -> CSS/style.css, linii 293-323
+- Bordere alternate cu nth-child -> CSS/style.css, linii 340-345
+- Outline la hover cu tranzitie de 0.5s -> CSS/style.css, linii 348-356
+
+7) Stilizare taburi iframe
+- Structura container-iframe, iframe si taburi-iframe -> index.html, linii 252-269
+- Container iframe + coloana taburi -> CSS/style.css, linii 386-403
+- Flexbox pe taburi-iframe -> CSS/style.css, linii 405-413
+- Linkuri stilizate ca butoane lipite -> CSS/style.css, linii 416-438
+- Hover cu alungire spre dreapta si schimbare de culoare -> CSS/style.css, linii 441-447
+- Adaptare pe ecran mic -> CSS/style.css, linii 630-668
+
+8) Link top
+- Elementul HTML pentru link top -> index.html, linii 334-336
+- Pozitie fixa, opacitate si cerc decorativ -> CSS/style.css, linii 465-490
+- Tooltip la hover -> CSS/style.css, linii 493-508 si 536-540
+- Sageata blurata si clarificare la hover -> CSS/style.css, linii 511-548
+- Dimensiuni pe ecran mic -> CSS/style.css, linii 674-682
+
+9) Bonusuri
+- Reset CSS in fisier separat -> CSS/reset.css, linii 1-56
+- MathML in pagina -> index.html, linii 282-297
+- Stilizare MathML -> CSS/style.css, linii 449-463

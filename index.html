@@ -14,6 +14,12 @@
     <link rel="icon" type="image/png" sizes="96x96" href="resurse/ico/favicon-96x96.png">
     <link rel="apple-touch-icon" sizes="180x180" href="resurse/ico/apple-touch-icon.png">
     <link rel="manifest" href="resurse/ico/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
     <header id="inceput">
@@ -42,8 +48,9 @@
     </header>
 
     <main>
-        <section id="despre">
+        <section id="despre" class="zona-grid zona-1">
             <h2>Despre 4Pets</h2>
+            <p class="accent-poster"><i class="fa-solid fa-paw icon-static" aria-hidden="true"></i> Hrana, accesorii si recomandari pentru animale de companie ingrijite responsabil.</p>
             <p>La <b>4Pets</b>, fiecare <b>animal de companie</b> primeste recomandari practice pentru <b>hrana animale</b>, <b>accesorii animale</b>, <b>jucarii animale</b> si <b>ingrijire animale</b>.</p>
             <p>In acest <b>pet shop</b> ne bazam pe date din <i>veterinary nutrition</i> si pe principii <i>grain-free</i> doar atunci cand sunt justificate de medicul veterinar.</p>
             <p><strong>Anunt important:</strong> in perioada 2-20 martie 2026, stocul pentru unele jucarii animale este limitat, iar recomandarile de ingrijire animale sunt actualizate zilnic.</p>
@@ -72,123 +79,63 @@
             </article>
         </section>
 
-        <aside id="linkuri-utile">
-            <h2>Linkuri utile</h2>
-            <p>
-                Resursa externa:
-                <a href="https://www.purina.ro/articole/caini/nutritie" target="_blank" rel="noopener noreferrer">Ghid Purina pentru nutritie canina</a>
-            </p>
-            <p>
-                Link extern catre element cu id:
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#technical_summary">
-                    https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/<wbr>a#technical_summary
-                </a>
-            </p>
-        </aside>
-
-        <section id="imagine">
-            <h2>Imagine reprezentativa</h2>
-            <figure>
-                <picture>
-                    <source media="(max-width: 600px)" srcset="resurse/Images/peggy-small.jpg">
-                    <source media="(max-width: 1024px)" srcset="resurse/Images/peggy-medium.jpg">
-                    <img src="resurse/Images/peggy-large.jpg" alt="Caine fericit in magazinul 4Pets" title="Client 4Pets multumit" width="768" height="940">
-                </picture>
-                <figcaption>Imagine din magazin: clienti cu animale de companie, hrana animale si accesorii animale in zona principala.</figcaption>
-            </figure>
-
-            <p>
-                <a href="resurse/Images/peggy-large.jpg">
-                    <img src="resurse/Images/peggy-small.jpg" alt="Click pentru varianta mare a imaginii" width="240" height="294">
-                </a>
-                (la click, imaginea mare se deschide in tabul curent)
-            </p>
-
-            <h3>Harta de imagine</h3>
-            <p>Alege zona dorita pentru navigare rapida.</p>
-            <img src="resurse/Images/picture_map.png" alt="Harta interactiva a sectiunilor din pagina" usemap="#harta-4pets" width="640" height="360">
-            <map name="harta-4pets">
-                <area shape="rect" coords="0,0,213,180" href="#produse" alt="Zona produse">
-                <area shape="rect" coords="213,0,426,180" href="#evenimente" alt="Zona evenimente">
-                <area shape="rect" coords="426,0,640,180" href="#faq" alt="Zona intrebari frecvente">
-                <area shape="rect" coords="0,180,320,360" href="#video" alt="Zona video">
-                <area shape="rect" coords="320,180,640,360" href="#contact" alt="Zona contact">
-            </map>
-        </section>
-
-        <section id="evenimente">
-            <h2>Evenimente 4Pets</h2>
-            <ul>
-                <li><time datetime="2026-03-05T12:00">5 martie 2026, ora 12:00</time> - <b>Pachet de bun venit</b> - oferim mostre de hrana animale in limita stocului.</li>
-                <li><time datetime="2026-03-12T17:30">12 martie 2026, ora 17:30</time> - <b>Sesiune de recomandari</b> - prezentam accesorii animale pentru catei juniori.</li>
-                <li><time datetime="2026-03-20T11:00">20 martie 2026, ora 11:00</time> - <b>Ziua jocului</b> - testam jucarii animale interactive cu clienti voluntari.</li>
-            </ul>
-
-            <p>
-                Confirmari atelier (valoare mica):
-                <meter value="18" min="0" max="100" low="30" high="80" optimum="65">18 din 100</meter>
-            </p>
-            <p>
-                Trafic sambata (valoare mare):
-                <meter value="91" min="0" max="100" low="30" high="80" optimum="65">91 din 100</meter>
-            </p>
-        </section>
-
-        <section id="produse">
+        <section id="produse" class="zona-grid zona-2">
             <h2>Tabel produse populare</h2>
-            <table>
-                <caption>Produse populare in pet shop-ul 4Pets</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Produs</th>
-                        <th scope="col">Categorie</th>
-                        <th scope="col">Pret</th>
-                        <th scope="col">Stoc</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Royal Canin Adult</td>
-                        <td>Hrana animale</td>
-                        <td>129 lei</td>
-                        <td>Disponibil</td>
-                    </tr>
-                    <tr>
-                        <td>Whiskas Sterile</td>
-                        <td>Hrana animale</td>
-                        <td>82 lei</td>
-                        <td>Disponibil</td>
-                    </tr>
-                    <tr>
-                        <td>Lesa reglabila</td>
-                        <td>Accesorii animale</td>
-                        <td>49 lei</td>
-                        <td>Disponibil</td>
-                    </tr>
-                    <tr>
-                        <td>Minge interactiva</td>
-                        <td>Jucarii animale</td>
-                        <td>39 lei</td>
-                        <td>Disponibil</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Pachet combo hrana + accesorii</td>
-                        <td>159 lei</td>
-                        <td rowspan="2">Stoc limitat</td>
-                    </tr>
-                    <tr>
-                        <td>Pat premium</td>
-                        <td>Accesorii animale</td>
-                        <td>219 lei</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="3">Total produse in campanie</td>
-                        <td>26</td>
-                    </tr>
-                </tfoot>
-            </table>
+            <div class="container-tabel">
+                <table>
+                    <caption>Produse populare in pet shop-ul 4Pets</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Produs</th>
+                            <th scope="col">Categorie</th>
+                            <th scope="col">Pret</th>
+                            <th scope="col">Stoc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Royal Canin Adult</td>
+                            <td>Hrana animale</td>
+                            <td>129 lei</td>
+                            <td>Disponibil</td>
+                        </tr>
+                        <tr>
+                            <td>Whiskas Sterile</td>
+                            <td>Hrana animale</td>
+                            <td>82 lei</td>
+                            <td>Disponibil</td>
+                        </tr>
+                        <tr>
+                            <td>Lesa reglabila</td>
+                            <td>Accesorii animale</td>
+                            <td>49 lei</td>
+                            <td>Disponibil</td>
+                        </tr>
+                        <tr>
+                            <td>Minge interactiva</td>
+                            <td>Jucarii animale</td>
+                            <td>39 lei</td>
+                            <td>Disponibil</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Pachet combo hrana + accesorii</td>
+                            <td>159 lei</td>
+                            <td rowspan="2">Stoc limitat</td>
+                        </tr>
+                        <tr>
+                            <td>Pat premium</td>
+                            <td>Accesorii animale</td>
+                            <td>219 lei</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Total produse in campanie</td>
+                            <td>26</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
 
             <p>
                 Descarca oferta PDF:
@@ -196,75 +143,168 @@
             </p>
         </section>
 
-        <section id="faq">
-            <h2>Intrebari frecvente</h2>
-            <details>
-                <summary>Ce hrana animale recomandati pentru pui?</summary>
-                <p>Alegerea se face dupa varsta, talie si nivel de activitate, plus recomandarea medicului veterinar.</p>
-            </details>
-            <details>
-                <summary>Exista garantie pentru accesorii animale?</summary>
-                <p>Da, majoritatea produselor au garantie comerciala intre 30 si 90 de zile.</p>
-            </details>
-            <details>
-                <summary>Pot returna jucarii animale nefolosite?</summary>
-                <p>Da, in 14 zile, cu ambalaj intact si documentul de achizitie.</p>
-            </details>
+        <section id="calendar" class="zona-grid zona-3 placeholder">
+            <h2>Calendar evenimente</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra, arcu id feugiat rutrum, sem mi rutrum urna, vitae tempor risus mi nec erat.</p>
         </section>
 
-        <section id="video">
-            <h2>Video YouTube</h2>
-            <div>
-                <a href="https://www.youtube.com/embed/jNQXAC9IVRw?si=def456" target="cadru-video">https://www.youtube.com/embed/jNQXAC9IVRw?si=def456</a><br>
-                <a href="https://www.youtube.com/embed/aqz-KE-bpKQ?si=ghi789" target="cadru-video">https://www.youtube.com/embed/aqz-KE-bpKQ?si=ghi789</a><br>
-                <a href="https://www.youtube.com/embed/M7lc1UVf-VE?si=abc123" target="cadru-video">https://www.youtube.com/embed/M7lc1UVf-VE?si=abc123</a>
-            </div>
-            <iframe
-                name="cadru-video"
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&amp;controls=1&amp;rel=0"
-                title="Videoclip YouTube despre ingrijire animale"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-
-            <h3>Playlist YouTube automat </h3>
-            <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/jNQXAC9IVRw?autoplay=1&amp;mute=1&amp;controls=1&amp;loop=1&amp;playlist=jNQXAC9IVRw,aqz-KE-bpKQ,M7lc1UVf-VE"
-                title="Playlist YouTube 4Pets"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+        <section id="anunturi" class="zona-grid zona-4 placeholder">
+            <h2>Anunturi</h2>
+            <p><i class="fa-solid fa-bone icon-animated" aria-hidden="true"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in sapien vel magna porta fermentum.</p>
         </section>
 
-        <section id="formula">
-            <h2>Formula MathML</h2>
-            <p>Pentru estimarea necesarului energetic zilnic folosim formula standard RER.</p>
-            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                <mrow>
-                    <mi>RER</mi>
-                    <mo>=</mo>
-                    <mn>70</mn>
-                    <mo>&#x00D7;</mo>
-                    <msup>
-                        <mi>W</mi>
-                        <mn>0.75</mn>
-                    </msup>
-                </mrow>
-            </math>
-            <p>Unde <i>W</i> este greutatea animalului in kilograme.</p>
+        <section id="online" class="zona-grid zona-5 placeholder">
+            <h2>Utilizatori online</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor leo at risus luctus, non aliquet nisi porta.</p>
         </section>
 
-        <section id="pdf">
-            <h2>Brosura PDF</h2>
-            <object data="resurse/oferta-4pets.pdf" type="application/pdf" width="700" height="500">
-                <p>Browserul nu poate afisa PDF-ul. Deschide fisierul aici:
-                    <a href="resurse/oferta-4pets.pdf" target="_blank" rel="noopener noreferrer">Brosura 4Pets</a>.
+        <section id="statistici" class="zona-grid zona-6 placeholder">
+            <h2>Date utilizator si statistici</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec ipsum quis mauris eleifend gravida.</p>
+        </section>
+
+        <section id="server" class="zona-grid zona-7 placeholder">
+            <h2>Date site si server</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus diam nec neque ultrices, nec volutpat sem posuere.</p>
+        </section>
+
+        <section id="diverse" class="zona-grid zona-8">
+            <h2>Ghid si resurse 4Pets</h2>
+
+            <aside id="linkuri-utile">
+                <h3>Linkuri utile</h3>
+                <p>
+                    Resursa externa:
+                    <a href="https://www.purina.ro/articole/caini/nutritie" target="_blank" rel="noopener noreferrer">Ghid Purina pentru nutritie canina</a>
                 </p>
-            </object>
+                <p>
+                    Link extern catre element cu id:
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#technical_summary">
+                        https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/<wbr>a#technical_summary
+                    </a>
+                </p>
+            </aside>
+
+            <section id="imagine">
+                <h3>Imagine reprezentativa</h3>
+                <figure>
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="resurse/Images/peggy-small.jpg">
+                        <source media="(max-width: 1024px)" srcset="resurse/Images/peggy-medium.jpg">
+                        <img src="resurse/Images/peggy-large.jpg" alt="Caine fericit in magazinul 4Pets" title="Client 4Pets multumit" width="768" height="940">
+                    </picture>
+                    <figcaption>Imagine din magazin: clienti cu animale de companie, hrana animale si accesorii animale in zona principala.</figcaption>
+                </figure>
+
+                <p>
+                    <a href="resurse/Images/peggy-large.jpg">
+                        <img src="resurse/Images/peggy-small.jpg" alt="Click pentru varianta mare a imaginii" width="240" height="294">
+                    </a>
+                    (la click, imaginea mare se deschide in tabul curent)
+                </p>
+
+                <h4>Harta de imagine</h4>
+                <p>Alege zona dorita pentru navigare rapida.</p>
+                <img src="resurse/Images/picture_map.png" alt="Harta interactiva a sectiunilor din pagina" usemap="#harta-4pets" width="640" height="360">
+                <map name="harta-4pets">
+                    <area shape="rect" coords="0,0,213,180" href="#produse" alt="Zona produse">
+                    <area shape="rect" coords="213,0,426,180" href="#calendar" alt="Zona evenimente">
+                    <area shape="rect" coords="426,0,640,180" href="#faq" alt="Zona intrebari frecvente">
+                    <area shape="rect" coords="0,180,320,360" href="#video" alt="Zona video">
+                    <area shape="rect" coords="320,180,640,360" href="#contact" alt="Zona contact">
+                </map>
+            </section>
+
+            <section id="evenimente">
+                <h3>Evenimente 4Pets</h3>
+                <ul>
+                    <li><time datetime="2026-03-05T12:00">5 martie 2026, ora 12:00</time> - <b>Pachet de bun venit</b> - oferim mostre de hrana animale in limita stocului.</li>
+                    <li><time datetime="2026-03-12T17:30">12 martie 2026, ora 17:30</time> - <b>Sesiune de recomandari</b> - prezentam accesorii animale pentru catei juniori.</li>
+                    <li><time datetime="2026-03-20T11:00">20 martie 2026, ora 11:00</time> - <b>Ziua jocului</b> - testam jucarii animale interactive cu clienti voluntari.</li>
+                </ul>
+
+                <p>
+                    Confirmari atelier (valoare mica):
+                    <meter value="18" min="0" max="100" low="30" high="80" optimum="65">18 din 100</meter>
+                </p>
+                <p>
+                    Trafic sambata (valoare mare):
+                    <meter value="91" min="0" max="100" low="30" high="80" optimum="65">91 din 100</meter>
+                </p>
+            </section>
+
+            <section id="faq">
+                <h3>Intrebari frecvente</h3>
+                <details>
+                    <summary>Ce hrana animale recomandati pentru pui?</summary>
+                    <p>Alegerea se face dupa varsta, talie si nivel de activitate, plus recomandarea medicului veterinar.</p>
+                </details>
+                <details>
+                    <summary>Exista garantie pentru accesorii animale?</summary>
+                    <p>Da, majoritatea produselor au garantie comerciala intre 30 si 90 de zile.</p>
+                </details>
+                <details>
+                    <summary>Pot returna jucarii animale nefolosite?</summary>
+                    <p>Da, in 14 zile, cu ambalaj intact si documentul de achizitie.</p>
+                </details>
+            </section>
+
+            <section id="video">
+                <h3>Video YouTube</h3>
+                <div class="container-iframe">
+                    <iframe
+                        name="cadru-video"
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&amp;controls=1&amp;rel=0"
+                        title="Videoclip YouTube despre ingrijire animale"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="taburi-iframe">
+                        <a href="https://www.youtube.com/embed/jNQXAC9IVRw?si=def456" target="cadru-video">Ingrijire</a>
+                        <a href="https://www.youtube.com/embed/aqz-KE-bpKQ?si=ghi789" target="cadru-video">Accesorii</a>
+                        <a href="https://www.youtube.com/embed/M7lc1UVf-VE?si=abc123" target="cadru-video">Recomandari</a>
+                    </div>
+                </div>
+
+                <h4>Playlist YouTube automat</h4>
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/jNQXAC9IVRw?autoplay=1&amp;mute=1&amp;controls=1&amp;loop=1&amp;playlist=jNQXAC9IVRw,aqz-KE-bpKQ,M7lc1UVf-VE"
+                    title="Playlist YouTube 4Pets"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </section>
+
+            <section id="formula">
+                <h3>Formula MathML</h3>
+                <p>Pentru estimarea necesarului energetic zilnic folosim formula standard RER.</p>
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <mrow>
+                        <mi>RER</mi>
+                        <mo>=</mo>
+                        <mn>70</mn>
+                        <mo>&#x00D7;</mo>
+                        <msup>
+                            <mi>W</mi>
+                            <mn>0.75</mn>
+                        </msup>
+                    </mrow>
+                </math>
+                <p>Unde <i>W</i> este greutatea animalului in kilograme.</p>
+            </section>
+
+            <section id="pdf">
+                <h3>Brosura PDF</h3>
+                <object data="resurse/oferta-4pets.pdf" type="application/pdf" width="700" height="500">
+                    <p>Browserul nu poate afisa PDF-ul. Deschide fisierul aici:
+                        <a href="resurse/oferta-4pets.pdf" target="_blank" rel="noopener noreferrer">Brosura 4Pets</a>.
+                    </p>
+                </object>
+            </section>
         </section>
     </main>
 
@@ -291,5 +331,8 @@
             <small>&copy; 4Pets, pagina creata la data de <time datetime="2026-03-02">2 martie 2026</time>.</small>
         </p>
     </footer>
+    <a id="link-top" href="#inceput" title="Mergi la inceputul paginii" aria-label="Mergi la inceputul paginii">
+        <span id="sageata-top">&#8593;</span>
+    </a>
 </body>
 </html>
