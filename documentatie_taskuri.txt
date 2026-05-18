@@ -261,3 +261,104 @@ Fisiere principale: index.html, CSS/style.css, CSS/reset.css
 - Reset CSS in fisier separat -> CSS/reset.css, linii 1-56
 - MathML in pagina -> index.html, linii 282-297
 - Stilizare MathML -> CSS/style.css, linii 449-463
+
+==================================================
+ETAPA 3 - SASS si meniu derulant responsive
+==================================================
+
+Fisiere principale: index.html, CSS/menu.scss, CSS/menu.css
+
+1) Structura HTML a meniului
+- Meniul este implementat in header, in tagul nav.
+- Nav-ul contine o lista neordonata cu linkuri.
+- Fiecare optiune principala are icon reprezentativ din Font Awesome:
+  Acasa, Produse, Galerii, Servicii, Contact.
+- Meniul este gandit ca element comun, care poate fi copiat pe fiecare pagina a site-ului.
+
+2) Submeniuri
+- Submeniul Acasa contine linkuri catre sectiuni din pagina curenta:
+  Despre, Produse, Evenimente, Video, Contact.
+- Submeniul Galerii contine linkuri catre alte pagini din site, chiar daca paginile nu exista inca:
+  galerie-statica.html, galerie-dinamica.html, galerie-video.html.
+- Astfel sunt acoperite ambele tipuri cerute de submeniu: sectiuni din pagina si pagini grupate descriptiv.
+
+3) SASS si CSS compilat
+- Stilizarea meniului este scrisa in CSS/menu.scss.
+- CSS/menu.css este fisierul compilat din SASS si este inclus in index.html.
+- Comanda folosita pentru compilare:
+  npx sass CSS/menu.scss CSS/menu.css --no-source-map
+
+4) Variabile si tema cromatica
+- Informatiile care depind de tema cromatica a meniului sunt puse in variabile CSS declarate in selectorul body.
+- Culorile meniului folosesc variabilele cromatice existente ale site-ului 4Pets.
+- Varianta mobile are o variabila separata pentru fundalul meniului, astfel incat animatia circulara sa fie vizibila pe fundalul header-ului.
+- Nu am folosit exact culorile din exemplul video, deoarece enuntul permite adaptarea cromatica.
+
+5) Cerinte SASS
+- Pentru selectori complecsi am folosit imbricarea din SASS.
+- Pentru cod comun am definit placeholder-ul %link-meniu si l-am refolosit cu @extend.
+- Pentru optiunile principale am folosit @for, care seteaza intarzieri progresive pentru animatia meniului pe mobil.
+- Valorile repetitive sunt tinute in variabile SASS sau variabile CSS.
+
+6) Meniu pe ecran mare
+- La hover pe o optiune principala apare o bara generata prin pseudo-elementul ::after.
+- Bara are background gradient cu 3 culori, coboara de sus, devine opaca si se aliniaza cu marginea de jos a butonului.
+- Submeniurile se deschid prin scalare de la 0 la dimensiunea completa.
+- Scalarea porneste din centrul boxului submeniului.
+- La hover pe o optiune din submeniu se schimba culoarea de background.
+
+7) Meniu pe ecran mediu
+- Textul optiunilor principale este ascuns vizual.
+- Raman afisate doar iconurile Font Awesome pentru optiunile principale.
+- Fontul meniului este redus pentru adaptare la latimea ecranului.
+
+8) Meniu pe ecran mic
+- Optiunile principale sunt ascunse initial si se afiseaza prin hamburger menu.
+- Meniul se deschide fara JavaScript, folosind checkbox + label.
+- In varianta burger, prima pagina este afisata doar prin iconul casa.
+- Bara glisanta de pe desktop dispare in varianta mobile.
+- Comportamentul pe hover/focus devine doar schimbarea culorii de background.
+- Meniul principal apare cu clip-path circular, care creste din coltul stanga-sus dupa apasarea hamburger-ului.
+- Submeniurile se deschid dedesubtul optiunii parinte, iar hover/focus schimba doar culoarea de background.
+
+9) Verificare
+- Am compilat SASS in CSS cu npx sass.
+- Am verificat vizual starea desktop si mobile in Chrome headless, folosind screenshot-uri locale.
+
+==================================================
+REFERINTE RAPIDE PENTRU PREZENTARE (ETAPA 3)
+==================================================
+Fisiere principale: index.html, CSS/menu.scss, CSS/menu.css
+
+1) Structura HTML a meniului
+- Link catre CSS-ul compilat pentru meniu -> index.html, linia 23
+- Meniu in nav cu lista neordonata si linkuri -> index.html, linii 32-84
+- Iconuri Font Awesome pe optiunile principale -> index.html, linii 42-80
+
+2) Submeniuri
+- Submeniu Acasa cu linkuri catre sectiuni -> index.html, linii 41-52
+- Submeniu Galerii cu linkuri catre alte pagini -> index.html, linii 60-69
+
+3) SASS si CSS compilat
+- Sursa SASS a meniului -> CSS/menu.scss
+- CSS compilat inclus in pagina -> CSS/menu.css
+- Variabile CSS pentru tema meniului in body -> CSS/menu.scss, linii 42-56
+
+4) Cerinte SASS
+- Placeholder si @extend pentru linkuri comune -> CSS/menu.scss, linii 27-40, 103-104 si 183-184
+- @for pentru optiunile meniului -> CSS/menu.scss, linii 83-87
+- Imbricare SASS pentru selectorii meniului -> CSS/menu.scss, linii 58-198, 200-220 si 222-372
+
+5) Meniu pe ecran mare
+- Bara gradient prin ::after -> CSS/menu.scss, linii 126-149
+- Deschidere submeniu prin scale din centru -> CSS/menu.scss, linii 152-176
+- Hover pe optiunile din submeniu -> CSS/menu.scss, linii 191-195
+
+6) Meniu pe ecran mediu
+- Text ascuns, iconuri ramase vizibile -> CSS/menu.scss, linii 200-218
+
+7) Meniu pe ecran mic
+- Hamburger menu cu checkbox + label -> CSS/menu.scss, linii 222-270
+- Deschidere meniu cu clip-path circular la apasarea hamburger-ului -> CSS/menu.scss, linii 272-339
+- Submeniuri mobile deschise dedesubt fara bara glisanta -> CSS/menu.scss, linii 325-367
+- Prima pagina afisata ca icon casa -> CSS/menu.scss, linii 312-318

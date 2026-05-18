@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="CSS/reset.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/menu.css">
 </head>
 <body>
     <header id="inceput">
@@ -28,21 +29,57 @@
             <p>Pet shop pentru animale de companie, cu hrana animale si accesorii animale alese corect.</p>
         </hgroup>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">Acasa</a>
-                    <ul>
+        <nav class="meniu-site" aria-label="Meniu principal">
+            <input class="meniu-toggle" type="checkbox" id="comutator-meniu">
+            <label class="buton-burger" for="comutator-meniu" aria-label="Deschide meniul">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="lista-meniu">
+                <li class="optiune-meniu prima-pagina">
+                    <a href="index.html">
+                        <i class="fa-solid fa-house" aria-hidden="true"></i>
+                        <span class="text-optiune">Acasa</span>
+                    </a>
+                    <ul class="submeniu">
                         <li><a href="#despre">Despre</a></li>
-                        <li><a href="#evenimente">Evenimente</a></li>
                         <li><a href="#produse">Produse</a></li>
+                        <li><a href="#evenimente">Evenimente</a></li>
                         <li><a href="#video">Video</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </li>
-                <li><a href="#produse">Produse</a></li>
-                <li><a href="#faq">Servicii</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="optiune-meniu">
+                    <a href="#produse">
+                        <i class="fa-solid fa-bone" aria-hidden="true"></i>
+                        <span class="text-optiune">Produse</span>
+                    </a>
+                </li>
+                <li class="optiune-meniu">
+                    <a href="galerie-statica.html">
+                        <i class="fa-solid fa-images" aria-hidden="true"></i>
+                        <span class="text-optiune">Galerii</span>
+                    </a>
+                    <ul class="submeniu">
+                        <li><a href="galerie-statica.html">Galerie statica</a></li>
+                        <li><a href="galerie-dinamica.html">Galerie dinamica</a></li>
+                        <li><a href="galerie-video.html">Galerie video</a></li>
+                    </ul>
+                </li>
+                <li class="optiune-meniu">
+                    <a href="#faq">
+                        <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+                        <span class="text-optiune">Servicii</span>
+                    </a>
+                </li>
+                <li class="optiune-meniu">
+                    <a href="#contact">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span class="text-optiune">Contact</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -309,7 +346,8 @@
     </main>
 
     <footer id="contact">
-        <p><a href="#inceput">Inapoi la inceputul paginii</a></p>
+        <p class="link-inceput"><a href="#inceput">Inapoi la inceputul paginii</a></p>
+        <p class="banner-print">Acesta este un proiect școlar!</p>
 
         <address>
             Telefon: <a href="tel:+40700111222">+40&nbsp;700&nbsp;111&nbsp;222</a><br>

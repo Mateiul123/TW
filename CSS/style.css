@@ -89,6 +89,11 @@ footer a {
     color: var(--culoare-accent-deschis);
 }
 
+.banner-print {
+    font-weight: 800;
+    text-align: center;
+}
+
 h1 {
     font-size: 2.1rem;
     font-weight: 800;
@@ -548,7 +553,7 @@ math mn {
         0 0 var(--culoare-accent);
 }
 
-@media (max-width: 1100px) {
+@media screen and (max-width: 1100px) {
     html {
         font-size: 17px;
     }
@@ -593,7 +598,260 @@ math mn {
     }
 }
 
-@media (max-width: 700px) {
+@page {
+    margin-top: 1.5cm;
+    margin-right: 3cm;
+    margin-bottom: 1.5cm;
+    margin-left: 1cm;
+}
+
+@page :left {
+    margin-left: 3cm;
+    margin-right: 1cm;
+}
+
+@page :right {
+    margin-left: 1cm;
+    margin-right: 3cm;
+}
+
+@media print {
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
+
+    html,
+    body {
+        min-width: 0 !important;
+        color: #000 !important;
+        background: #fff !important;
+    }
+
+    body::after {
+        content: "Pop\A Matei";
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        box-sizing: border-box;
+        width: 4cm;
+        height: 1cm;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid #000;
+        border-radius: 0.18cm;
+        color: #000;
+        background: #fff;
+        font-weight: 800;
+        line-height: 1.1;
+        text-align: center;
+        white-space: pre;
+        opacity: 0.4;
+        pointer-events: none;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    header,
+    footer,
+    main,
+    .zona-grid,
+    .zona-1 article {
+        margin: 0 !important;
+        background: transparent !important;
+        color: #000 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    header {
+        padding: 0 !important;
+        text-align: center;
+        break-after: page;
+        page-break-after: always;
+    }
+
+    header hgroup p {
+        display: none !important;
+    }
+
+    h1 {
+        margin: 0 0 0.6cm;
+        color: #000 !important;
+        text-align: center;
+    }
+
+    .meniu-site {
+        display: block !important;
+        margin: 0 auto !important;
+        background: transparent !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .meniu-site .meniu-toggle,
+    .meniu-site .buton-burger,
+    .meniu-site .submeniu,
+    .meniu-site i {
+        display: none !important;
+    }
+
+    .meniu-site .lista-meniu {
+        display: block !important;
+        width: max-content !important;
+        max-block-size: none !important;
+        margin: 0 auto !important;
+        padding: 0 0 0 1.25em !important;
+        overflow: visible !important;
+        list-style: disc !important;
+        background: transparent !important;
+        clip-path: none !important;
+        list-style-position: outside !important;
+        opacity: 1 !important;
+        text-align: left;
+    }
+
+    .meniu-site .lista-meniu > li {
+        display: list-item !important;
+        margin: 0 0 0.25em !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .meniu-site .lista-meniu > li > a {
+        display: inline !important;
+        min-width: 0 !important;
+        min-inline-size: 0 !important;
+        min-height: 0 !important;
+        min-block-size: 0 !important;
+        padding: 0 !important;
+        color: #000 !important;
+        background: transparent !important;
+        border: 0 !important;
+        font-weight: 400 !important;
+        line-height: normal !important;
+        text-decoration: none !important;
+    }
+
+    .meniu-site .lista-meniu > li > a::after {
+        content: none !important;
+    }
+
+    .meniu-site .lista-meniu > li > a .text-optiune {
+        position: static !important;
+        z-index: auto !important;
+        inline-size: auto !important;
+        block-size: auto !important;
+        overflow: visible !important;
+        clip: auto !important;
+        clip-path: none !important;
+        white-space: normal !important;
+    }
+
+    main,
+    .zona-1 {
+        display: block !important;
+    }
+
+    .zona-grid {
+        padding: 0 !important;
+        margin-bottom: 0.8cm !important;
+        break-inside: auto;
+        page-break-inside: auto;
+    }
+
+    .zona-1 article,
+    blockquote,
+    dl,
+    details {
+        padding: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    .container-tabel {
+        overflow: visible !important;
+        padding: 0 !important;
+    }
+
+    table {
+        min-width: 0 !important;
+        border: 1px solid #000 !important;
+        border-collapse: collapse !important;
+    }
+
+    th,
+    td {
+        color: #000 !important;
+        background: transparent !important;
+        border: 1px solid #000 !important;
+    }
+
+    a,
+    a:visited,
+    header a,
+    footer a {
+        color: inherit !important;
+        font-weight: inherit !important;
+        text-decoration: none !important;
+    }
+
+    img,
+    picture,
+    source,
+    video,
+    audio,
+    iframe,
+    object,
+    embed,
+    canvas,
+    svg,
+    figure,
+    figcaption,
+    map,
+    area,
+    .container-iframe,
+    .taburi-iframe,
+    #imagine,
+    #video,
+    #pdf,
+    #link-top,
+    .link-inceput {
+        display: none !important;
+    }
+
+    footer {
+        padding: 0 !important;
+        break-before: page;
+        page-break-before: always;
+    }
+
+    .banner-print {
+        position: absolute;
+        left: 15%;
+        bottom: 0;
+        box-sizing: border-box;
+        width: 70%;
+        margin: 0 !important;
+        padding: 0.25cm;
+        border: 4px inset #000 !important;
+        color: #000 !important;
+        background: #fff !important;
+        font-weight: 800;
+        text-align: center;
+        z-index: 9998;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+@media screen and (max-width: 700px) {
     html {
         font-size: 16px;
     }

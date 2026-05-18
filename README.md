@@ -80,3 +80,34 @@ Fisiere principale: `index.html`, `CSS/style.css`, `CSS/reset.css`
 | Reset CSS in fisier separat | `CSS/reset.css`: 1-56 |
 | MathML in pagina | `index.html`: 282-297 |
 | Stilizare MathML | `CSS/style.css`: 449-463 |
+
+## Referinte rapide pentru prezentare (Etapa 3)
+
+Fisiere principale: `index.html`, `CSS/menu.scss`, `CSS/menu.css`
+
+### Cerinte implementate momentan
+
+| # | Cerinta | Linii in cod (start+interval) |
+|---|---|---|
+| 1 | Link catre CSS-ul compilat pentru meniu | `index.html`: 23 |
+| 2 | Meniu in tagul `nav`, cu lista neordonata si linkuri | `index.html`: 32-84 |
+| 3 | Icon Font Awesome pentru fiecare optiune principala | `index.html`: 42-80 |
+| 4 | Submeniu cu linkuri catre sectiuni din pagina `Acasa` | `index.html`: 41-52 |
+| 5 | Submeniu cu linkuri catre alte pagini din site, grupate sub `Galerii` | `index.html`: 60-69 |
+| 6 | Variabile CSS pentru tema meniului in selectorul `body` | `CSS/menu.scss`: 42-56 |
+| 7 | Selectori complecsi prin imbricare SASS | `CSS/menu.scss`: 58-198, 200-220, 222-372 |
+| 8 | Cod comun refolosit cu `@extend` | `CSS/menu.scss`: 27-40, 103-104, 183-184 |
+| 9 | Instructiune repetitiva `@for` pentru optiunile meniului | `CSS/menu.scss`: 83-87 |
+| 10 | Desktop: bara glisanta cu gradient in 3 culori prin `::after` | `CSS/menu.scss`: 126-149 |
+| 11 | Desktop: submeniul se deschide prin `transform: scale(...)` din centru | `CSS/menu.scss`: 152-176 |
+| 12 | Hover pe submeniu cu schimbare de background | `CSS/menu.scss`: 191-195 |
+| 13 | Ecran mediu: text ascuns, raman doar iconurile principale | `CSS/menu.scss`: 200-218 |
+| 14 | Ecran mic: hamburger menu fara JavaScript | `CSS/menu.scss`: 222-270 |
+| 15 | Ecran mic: meniul principal apare cu `clip-path: circle(...)` cand este apasat hamburger-ul | `CSS/menu.scss`: 272-339 |
+| 16 | Ecran mic: prima pagina este afisata doar ca icon casa | `CSS/menu.scss`: 312-318 |
+
+Comanda folosita pentru compilare:
+
+```bash
+npx sass CSS/menu.scss CSS/menu.css 
+```
