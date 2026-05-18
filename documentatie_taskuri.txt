@@ -362,3 +362,95 @@ Fisiere principale: index.html, CSS/menu.scss, CSS/menu.css
 - Deschidere meniu cu clip-path circular la apasarea hamburger-ului -> CSS/menu.scss, linii 272-339
 - Submeniuri mobile deschise dedesubt fara bara glisanta -> CSS/menu.scss, linii 325-367
 - Prima pagina afisata ca icon casa -> CSS/menu.scss, linii 312-318
+
+==================================================
+COMPLETARE ETAPA 3 - Stil pentru printare
+==================================================
+
+Fisiere principale: index.html, CSS/style.css
+
+Observatie:
+- Bannerul cerut este implementat ca paragraf in footer, cu textul "Acesta este un proiect școlar!".
+
+1) Banner print
+- In footer exista paragraful p.banner-print cu textul cerut.
+- La printare, bannerul este pozitionat jos pe prima pagina.
+- Este centrat pe orizontala prin left: 15% si width: 70%.
+- Are border negru inset de 4px si fundal alb pentru lizibilitate.
+
+2) Ascundere media si elemente dependente
+- La printare sunt ascunse imaginile, picture/source, video, audio, iframe, object, embed, canvas, svg.
+- Sunt ascunse si figure/figcaption, containerul de iframe, taburile iframe, sectiunile de imagine, video si PDF.
+- Linkul catre inceputul paginii este ascuns prin clasa link-inceput si prin selectorul #link-top.
+
+3) Layout pentru print
+- Main-ul si zona 1 trec la display: block, astfel incat gridul sa nu fie sectionat in paginile printate.
+- Zonele de continut pierd background-ul, borderul, border-radius-ul si box-shadow-ul pentru un print curat.
+- Tabelul este pastrat lizibil, cu border collapse si borduri negre de 1px.
+
+4) Linkuri normale
+- Toate linkurile sunt afisate ca text normal la printare.
+- Culoarea este mostenita, font-weight-ul este mostenit, iar sublinierea este eliminata.
+
+5) Header si meniu la print
+- Headingul h1 ramane pe prima pagina si este centrat.
+- Subtitlul din hgroup este ascuns.
+- Meniul este afisat ca lista neordonata verticala.
+- Submeniurile si iconurile Font Awesome ale meniului sunt ascunse.
+- Dupa header/meniu se forteaza page break.
+
+6) Footer la print
+- Inaintea footerului se forteaza page break.
+- Linkul catre inceputul paginii si iframe-ul Google Maps din footer sunt ascunse.
+
+7) Watermark
+- Watermark-ul este realizat prin pseudo-elementul body::after in media print.
+- Contine numele pe primul rand si prenumele sub el: Pop / Matei.
+- Are dimensiune 4cm x 1cm, border solid negru de 3px, colturi rotunjite, text centrat si bold.
+- Este pozitionat fixed in coltul dreapta jos, cu opacity 0.4, astfel incat apare pe fiecare pagina printata.
+
+8) Margini de pagina
+- Pentru printare este folosit @page.
+- Paginile din stanga au margine stanga 3cm si margine dreapta 1cm.
+- Paginile din dreapta au margine dreapta 3cm si margine stanga 1cm.
+- Regulile responsive pentru ecran sunt limitate cu media screen, ca sa nu modifice stilul de print.
+
+9) Verificare
+- Verificarea se face direct din browser cu Print Preview (Cmd+P / Ctrl+P).
+- In preview se verifica prima pagina, page break-urile, ascunderea media, watermark-ul si marginile alternante.
+
+==================================================
+REFERINTE RAPIDE PENTRU PREZENTARE (ETAPA 3 - PRINT)
+==================================================
+Fisiere principale: index.html, CSS/style.css
+
+1) Banner print
+- Paragraf banner in footer -> index.html, linii 348-350
+- Stil banner la print -> CSS/style.css, linii 835-850
+
+2) Ascundere media
+- Ascundere imagini, media, iframe, object/PDF si elemente dependente -> CSS/style.css, linii 805-826
+- Ascundere link catre inceputul paginii -> index.html, linia 349; CSS/style.css, linii 824-826
+
+3) Layout print
+- Main si zona 1 afisate block -> CSS/style.css, linii 756-759
+- Zonele grid fara efecte vizuale la print -> CSS/style.css, linii 659-670 si 761-776
+- Tabel lizibil pentru print -> CSS/style.css, linii 778-794
+
+4) Linkuri normale
+- Linkurile mostenesc culoarea si nu mai sunt subliniate -> CSS/style.css, linii 796-803
+
+5) Header, meniu si page break
+- H1 centrat si subtitlu ascuns -> CSS/style.css, linii 672-687
+- Meniu ca lista neordonata verticala, fara submeniuri/iconuri -> CSS/style.css, linii 689-753
+- Page break dupa header/meniu -> CSS/style.css, linii 672-677
+- Page break inainte de footer -> CSS/style.css, linii 829-832
+
+6) Watermark
+- Watermark cu nume/prenume, dimensiuni, border, opacity si pozitie fixa -> CSS/style.css, linii 633-656
+
+7) Margini print
+- @page general, pagini stanga si pagini dreapta -> CSS/style.css, linii 601-616
+
+8) Protectie fata de media query-urile responsive
+- Media query-uri responsive limitate la screen -> CSS/style.css, liniile 556 si 854

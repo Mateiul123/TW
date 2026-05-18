@@ -109,5 +109,24 @@ Fisiere principale: `index.html`, `CSS/menu.scss`, `CSS/menu.css`
 Comanda folosita pentru compilare:
 
 ```bash
-npx sass CSS/menu.scss CSS/menu.css 
+npx sass CSS/menu.scss CSS/menu.css
 ```
+
+### Stil pentru printare (Etapa 3)
+
+Fisiere principale: `index.html`, `CSS/style.css`
+
+| # | Cerinta | Linii in cod (start+interval) |
+|---|---|---|
+| 1 | Bannerul este paragraf in footer cu textul cerut | `index.html`: 348-350 |
+| 2 | Banner print jos pe prima pagina, centrat, 70% latime, border negru inset 4px | `CSS/style.css`: 835-850 |
+| 3 | Ascundere imagini, video/audio, iframe, object/PDF si elemente dependente | `CSS/style.css`: 805-826 |
+| 4 | Ascundere link catre inceputul paginii la print | `index.html`: 349; `CSS/style.css`: 824-826 |
+| 5 | Gridul paginii si zona 1 devin block la print | `CSS/style.css`: 756-765 |
+| 6 | Linkurile se afiseaza ca text normal | `CSS/style.css`: 796-803 |
+| 7 | H1 centrat, subtitlu ascuns, meniu ca lista neordonata verticala | `CSS/style.css`: 672-753 |
+| 8 | Submeniurile si iconurile meniului sunt ascunse la print | `CSS/style.css`: 697-702 |
+| 9 | Page break dupa meniul din header si inainte de footer | `CSS/style.css`: 672-677, 829-832 |
+| 10 | Watermark pe fiecare pagina cu nume/prenume, 4cm x 1cm, border 3px, opacity 0.4 | `CSS/style.css`: 633-656 |
+| 11 | Margini diferite pentru pagini stanga/dreapta in print preview | `CSS/style.css`: 601-616 |
+| 12 | Media query-urile responsive sunt limitate la ecran, ca sa nu afecteze printarea | `CSS/style.css`: 556, 854 |
