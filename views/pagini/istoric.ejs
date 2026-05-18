@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include("../fragmente/head", {
+        titluPagina: "Istoric 4Pets",
+        descrierePagina: "Scurt istoric al proiectului scolar 4Pets si al magazinului virtual."
+    }) %>
+</head>
+<body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <section class="zona-grid zona-1">
+            <h2>Istoric 4Pets</h2>
+            <p class="accent-poster">4Pets este un magazin virtual construit pentru prezentarea unei experiente complete de pet shop.</p>
+            <p>Proiectul porneste de la ideea unui magazin local care combina hrana animale, accesorii animale si recomandari de ingrijire intr-un singur loc usor de folosit.</p>
+            <p>In versiunea actuala, pagina foloseste randare EJS, fragmente reutilizabile pentru header, footer si head, plus rute Express pentru pagini si erori.</p>
+
+            <article>
+                <h3>Directie</h3>
+                <p>Etapele urmatoare pot extinde proiectul cu produse preluate din baza de date, autentificare si formulare, fara sa schimbe structura de baza a layoutului.</p>
+            </article>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+</body>
+</html>

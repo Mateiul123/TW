@@ -7,12 +7,12 @@ Notă:
 Acest fișier se completează pe parcursul semestrului pentru taskurile care cer descriere în documentație.
 
 ==================================================
-ETAPA 1 - Prima pagină HTML (index.html)
+ETAPA 1 - Prima pagină HTML (views/pagini/index.ejs)
 ==================================================
 
 1) Structură de bază document
-- Am creat pagina index.html cu doctype și limbă setată la română.
-- Fișier: index.html
+- Am creat pagina views/pagini/index.ejs cu doctype și limbă setată la română.
+- Fișier: views/pagini/index.ejs
 
 2) Head (title + meta)
 - Am adăugat title relevant pentru tema site-ului.
@@ -91,7 +91,7 @@ ETAPA 1 - Prima pagină HTML (index.html)
 - Data este în limba română, în tagul time cu datetime doar dată.
 
 20) Validare
-- Fișierul index.html este valid sintactic în forma curentă .
+- Fișierul views/pagini/index.ejs este valid sintactic în forma curentă .
 - Observație: la validare trebuie folosit fișierul original din proiect sau URL-ul Live Server, nu varianta salvată din browser cu folder _files.
 
 --------------------------------------------------
@@ -106,7 +106,7 @@ BONUSURI FOLOSITE (ETAPA 1)
 ==================================================
 REFERINȚE RAPIDE PENTRU PREZENTARE (ETAPA 1)
 ==================================================
-Fișier principal: index.html
+Fișier principal: views/pagini/index.ejs
 
 1) Structură de bază document -> linii 1-3, 337-338
 2) Head (title + meta) -> linii 4-10
@@ -127,7 +127,7 @@ Fișier principal: index.html
 17) Meter -> linii 226-233
 18) Contact în footer (address) -> linii 311-318
 19) Copyright -> liniile 330-331
-20) Validare -> validat pe fișierul index.html (nu are o linie dedicată)
+20) Validare -> validat pe fișierul views/pagini/index.ejs (nu are o linie dedicată)
 
 BONUSURI - linii rapide
 - MathML -> linii 282-297
@@ -155,7 +155,7 @@ ETAPA 2 - CSS, schema cromatica si layout responsive
   - #f6f2e8 - fundal cald al paginii.
   - #ffffff si #e7f3ee - suprafete pentru zone de continut.
 - Motivatie: tema 4Pets are nevoie de o atmosfera de incredere, calm si grija. Verdele petrol si verdele menta sugereaza sanatate, siguranta si echilibru, potrivite pentru produse de ingrijire animale. Accentul amber adauga energie si caldura fara sa aglomereze vizual pagina.
-- Variabilele de culoare sunt definite in selectorul body din CSS/style.css si sunt folosite in restul CSS-ului prin var(...).
+- Variabilele de culoare sunt definite in selectorul body din resurse/css/style.css si sunt folosite in restul CSS-ului prin var(...).
 
 2) Layout responsive
 - Main-ul paginii foloseste CSS Grid cu grid-template-areas.
@@ -198,75 +198,75 @@ ETAPA 2 - CSS, schema cromatica si layout responsive
 - Tooltipul apare la hover prin pseudo-element CSS.
 
 8) Bonusuri
-- Reset CSS in fisier separat: CSS/reset.css.
-- Formula MathML are stilizare diferita pe identificatori si numere in CSS/style.css.
+- Reset CSS in fisier separat: resurse/css/reset.css.
+- Formula MathML are stilizare diferita pe identificatori si numere in resurse/css/style.css.
 
 ==================================================
 REFERINTE RAPIDE PENTRU PREZENTARE (ETAPA 2)
 ==================================================
-Fisiere principale: index.html, CSS/style.css, CSS/reset.css
+Fisiere principale: views/pagini/index.ejs, resurse/css/style.css, resurse/css/reset.css
 
 1) Repository local + GitHub
 - Repository local existent: folderul contine director .git.
 - Remote GitHub configurat: origin -> https://github.com/Mateiul123/TW.git
 
 2) Schema cromatica
-- Linkuri catre CSS si resurse externe in pagina -> index.html, linii 17-22
-- Variabile de culoare si spacing definite in body -> CSS/style.css, linii 1-21
-- Folosirea variabilelor de culoare in restul CSS-ului -> CSS/style.css, linii 23-690
+- Linkuri catre CSS si resurse externe in pagina -> views/pagini/index.ejs, linii 17-22
+- Variabile de culoare si spacing definite in body -> resurse/css/style.css, linii 1-21
+- Folosirea variabilelor de culoare in restul CSS-ului -> resurse/css/style.css, linii 23-690
 
 3) Layout responsive
-- Zonele HTML 1-8 din main -> index.html, linii 50-171
-- Grid principal cu grid-template-areas pe ecran mare -> CSS/style.css, linii 183-194
-- Atribuirea zonelor in grid -> CSS/style.css, linii 205-249
-- Layout pentru ecran mediu -> CSS/style.css, linii 551-594
-- Layout pe o coloana pentru ecran mic -> CSS/style.css, linii 596-690
-- Scaderea font-size-ului pe ecrane medii si mici -> CSS/style.css, linii 552-553 si 597-598
+- Zonele HTML 1-8 din main -> views/pagini/index.ejs, linii 50-171
+- Grid principal cu grid-template-areas pe ecran mare -> resurse/css/style.css, linii 183-194
+- Atribuirea zonelor in grid -> resurse/css/style.css, linii 205-249
+- Layout pentru ecran mediu -> resurse/css/style.css, linii 551-594
+- Layout pe o coloana pentru ecran mic -> resurse/css/style.css, linii 596-690
+- Scaderea font-size-ului pe ecrane medii si mici -> resurse/css/style.css, linii 552-553 si 597-598
 
 4) Design rudimentar
-- Spatiere laterala si gap prin variabile -> CSS/style.css, linii 17-19, 192-193, 556-558 si 601-604
-- Izolare vizuala header/footer prin background, border, border-radius, box-shadow -> CSS/style.css, linii 68-76
-- Izolare vizuala zone grid prin background, border, border-radius, box-shadow -> CSS/style.css, linii 196-202
-- Media responsive cu width procentual, min-width si max-width -> CSS/style.css, linii 38-65 si 638-647
-- Padding comun pentru zone -> CSS/style.css, linii 19, 71, 197 si 601-604
+- Spatiere laterala si gap prin variabile -> resurse/css/style.css, linii 17-19, 192-193, 556-558 si 601-604
+- Izolare vizuala header/footer prin background, border, border-radius, box-shadow -> resurse/css/style.css, linii 68-76
+- Izolare vizuala zone grid prin background, border, border-radius, box-shadow -> resurse/css/style.css, linii 196-202
+- Media responsive cu width procentual, min-width si max-width -> resurse/css/style.css, linii 38-65 si 638-647
+- Padding comun pentru zone -> resurse/css/style.css, linii 19, 71, 197 si 601-604
 
 5) Iconuri si font extern
-- Font extern Google si Font Awesome CDN -> index.html, linii 17-20
-- Icon static Font Awesome -> index.html, linia 53; CSS/style.css, linii 236-239
-- Icon animat Font Awesome -> index.html, linia 153; CSS/style.css, linii 257-265
+- Font extern Google si Font Awesome CDN -> views/pagini/index.ejs, linii 17-20
+- Icon static Font Awesome -> views/pagini/index.ejs, linia 53; resurse/css/style.css, linii 236-239
+- Icon animat Font Awesome -> views/pagini/index.ejs, linia 153; resurse/css/style.css, linii 257-265
 
 6) Stilizare tabel
-- Structura tabel, caption, minim 4 coloane, colspan si rowspan -> index.html, linii 82-138
-- Container cu overflow orizontal pentru tabel -> CSS/style.css, linii 287-290, 587-592 si 670-672
-- Caption jos, border inset si borduri de 1px -> CSS/style.css, linii 293-323
-- Bordere alternate cu nth-child -> CSS/style.css, linii 340-345
-- Outline la hover cu tranzitie de 0.5s -> CSS/style.css, linii 348-356
+- Structura tabel, caption, minim 4 coloane, colspan si rowspan -> views/pagini/index.ejs, linii 82-138
+- Container cu overflow orizontal pentru tabel -> resurse/css/style.css, linii 287-290, 587-592 si 670-672
+- Caption jos, border inset si borduri de 1px -> resurse/css/style.css, linii 293-323
+- Bordere alternate cu nth-child -> resurse/css/style.css, linii 340-345
+- Outline la hover cu tranzitie de 0.5s -> resurse/css/style.css, linii 348-356
 
 7) Stilizare taburi iframe
-- Structura container-iframe, iframe si taburi-iframe -> index.html, linii 252-269
-- Container iframe + coloana taburi -> CSS/style.css, linii 386-403
-- Flexbox pe taburi-iframe -> CSS/style.css, linii 405-413
-- Linkuri stilizate ca butoane lipite -> CSS/style.css, linii 416-438
-- Hover cu alungire spre dreapta si schimbare de culoare -> CSS/style.css, linii 441-447
-- Adaptare pe ecran mic -> CSS/style.css, linii 630-668
+- Structura container-iframe, iframe si taburi-iframe -> views/pagini/index.ejs, linii 252-269
+- Container iframe + coloana taburi -> resurse/css/style.css, linii 386-403
+- Flexbox pe taburi-iframe -> resurse/css/style.css, linii 405-413
+- Linkuri stilizate ca butoane lipite -> resurse/css/style.css, linii 416-438
+- Hover cu alungire spre dreapta si schimbare de culoare -> resurse/css/style.css, linii 441-447
+- Adaptare pe ecran mic -> resurse/css/style.css, linii 630-668
 
 8) Link top
-- Elementul HTML pentru link top -> index.html, linii 334-336
-- Pozitie fixa, opacitate si cerc decorativ -> CSS/style.css, linii 465-490
-- Tooltip la hover -> CSS/style.css, linii 493-508 si 536-540
-- Sageata blurata si clarificare la hover -> CSS/style.css, linii 511-548
-- Dimensiuni pe ecran mic -> CSS/style.css, linii 674-682
+- Elementul HTML pentru link top -> views/pagini/index.ejs, linii 334-336
+- Pozitie fixa, opacitate si cerc decorativ -> resurse/css/style.css, linii 465-490
+- Tooltip la hover -> resurse/css/style.css, linii 493-508 si 536-540
+- Sageata blurata si clarificare la hover -> resurse/css/style.css, linii 511-548
+- Dimensiuni pe ecran mic -> resurse/css/style.css, linii 674-682
 
 9) Bonusuri
-- Reset CSS in fisier separat -> CSS/reset.css, linii 1-56
-- MathML in pagina -> index.html, linii 282-297
-- Stilizare MathML -> CSS/style.css, linii 449-463
+- Reset CSS in fisier separat -> resurse/css/reset.css, linii 1-56
+- MathML in pagina -> views/pagini/index.ejs, linii 282-297
+- Stilizare MathML -> resurse/css/style.css, linii 449-463
 
 ==================================================
 ETAPA 3 - SASS si meniu derulant responsive
 ==================================================
 
-Fisiere principale: index.html, CSS/menu.scss, CSS/menu.css
+Fisiere principale: views/pagini/index.ejs, resurse/css/menu.scss, resurse/css/menu.css
 
 1) Structura HTML a meniului
 - Meniul este implementat in header, in tagul nav.
@@ -283,10 +283,10 @@ Fisiere principale: index.html, CSS/menu.scss, CSS/menu.css
 - Astfel sunt acoperite ambele tipuri cerute de submeniu: sectiuni din pagina si pagini grupate descriptiv.
 
 3) SASS si CSS compilat
-- Stilizarea meniului este scrisa in CSS/menu.scss.
-- CSS/menu.css este fisierul compilat din SASS si este inclus in index.html.
+- Stilizarea meniului este scrisa in resurse/css/menu.scss.
+- resurse/css/menu.css este fisierul compilat din SASS si este inclus in views/pagini/index.ejs.
 - Comanda folosita pentru compilare:
-  npx sass CSS/menu.scss CSS/menu.css --no-source-map
+  npx sass resurse/css/menu.scss resurse/css/menu.css --no-source-map
 
 4) Variabile si tema cromatica
 - Informatiile care depind de tema cromatica a meniului sunt puse in variabile CSS declarate in selectorul body.
@@ -328,46 +328,46 @@ Fisiere principale: index.html, CSS/menu.scss, CSS/menu.css
 ==================================================
 REFERINTE RAPIDE PENTRU PREZENTARE (ETAPA 3)
 ==================================================
-Fisiere principale: index.html, CSS/menu.scss, CSS/menu.css
+Fisiere principale: views/pagini/index.ejs, resurse/css/menu.scss, resurse/css/menu.css
 
 1) Structura HTML a meniului
-- Link catre CSS-ul compilat pentru meniu -> index.html, linia 23
-- Meniu in nav cu lista neordonata si linkuri -> index.html, linii 32-84
-- Iconuri Font Awesome pe optiunile principale -> index.html, linii 42-80
+- Link catre CSS-ul compilat pentru meniu -> views/pagini/index.ejs, linia 23
+- Meniu in nav cu lista neordonata si linkuri -> views/pagini/index.ejs, linii 32-84
+- Iconuri Font Awesome pe optiunile principale -> views/pagini/index.ejs, linii 42-80
 
 2) Submeniuri
-- Submeniu Acasa cu linkuri catre sectiuni -> index.html, linii 41-52
-- Submeniu Galerii cu linkuri catre alte pagini -> index.html, linii 60-69
+- Submeniu Acasa cu linkuri catre sectiuni -> views/pagini/index.ejs, linii 41-52
+- Submeniu Galerii cu linkuri catre alte pagini -> views/pagini/index.ejs, linii 60-69
 
 3) SASS si CSS compilat
-- Sursa SASS a meniului -> CSS/menu.scss
-- CSS compilat inclus in pagina -> CSS/menu.css
-- Variabile CSS pentru tema meniului in body -> CSS/menu.scss, linii 42-56
+- Sursa SASS a meniului -> resurse/css/menu.scss
+- CSS compilat inclus in pagina -> resurse/css/menu.css
+- Variabile CSS pentru tema meniului in body -> resurse/css/menu.scss, linii 42-56
 
 4) Cerinte SASS
-- Placeholder si @extend pentru linkuri comune -> CSS/menu.scss, linii 27-40, 103-104 si 183-184
-- @for pentru optiunile meniului -> CSS/menu.scss, linii 83-87
-- Imbricare SASS pentru selectorii meniului -> CSS/menu.scss, linii 58-198, 200-220 si 222-372
+- Placeholder si @extend pentru linkuri comune -> resurse/css/menu.scss, linii 27-40, 103-104 si 183-184
+- @for pentru optiunile meniului -> resurse/css/menu.scss, linii 83-87
+- Imbricare SASS pentru selectorii meniului -> resurse/css/menu.scss, linii 58-198, 200-220 si 222-372
 
 5) Meniu pe ecran mare
-- Bara gradient prin ::after -> CSS/menu.scss, linii 126-149
-- Deschidere submeniu prin scale din centru -> CSS/menu.scss, linii 152-176
-- Hover pe optiunile din submeniu -> CSS/menu.scss, linii 191-195
+- Bara gradient prin ::after -> resurse/css/menu.scss, linii 126-149
+- Deschidere submeniu prin scale din centru -> resurse/css/menu.scss, linii 152-176
+- Hover pe optiunile din submeniu -> resurse/css/menu.scss, linii 191-195
 
 6) Meniu pe ecran mediu
-- Text ascuns, iconuri ramase vizibile -> CSS/menu.scss, linii 200-218
+- Text ascuns, iconuri ramase vizibile -> resurse/css/menu.scss, linii 200-218
 
 7) Meniu pe ecran mic
-- Hamburger menu cu checkbox + label -> CSS/menu.scss, linii 222-270
-- Deschidere meniu cu clip-path circular la apasarea hamburger-ului -> CSS/menu.scss, linii 272-339
-- Submeniuri mobile deschise dedesubt fara bara glisanta -> CSS/menu.scss, linii 325-367
-- Prima pagina afisata ca icon casa -> CSS/menu.scss, linii 312-318
+- Hamburger menu cu checkbox + label -> resurse/css/menu.scss, linii 222-270
+- Deschidere meniu cu clip-path circular la apasarea hamburger-ului -> resurse/css/menu.scss, linii 272-339
+- Submeniuri mobile deschise dedesubt fara bara glisanta -> resurse/css/menu.scss, linii 325-367
+- Prima pagina afisata ca icon casa -> resurse/css/menu.scss, linii 312-318
 
 ==================================================
 COMPLETARE ETAPA 3 - Stil pentru printare
 ==================================================
 
-Fisiere principale: index.html, CSS/style.css
+Fisiere principale: views/pagini/index.ejs, resurse/css/style.css
 
 Observatie:
 - Bannerul cerut este implementat ca paragraf in footer, cu textul "Acesta este un proiect școlar!".
@@ -422,35 +422,156 @@ Observatie:
 ==================================================
 REFERINTE RAPIDE PENTRU PREZENTARE (ETAPA 3 - PRINT)
 ==================================================
-Fisiere principale: index.html, CSS/style.css
+Fisiere principale: views/pagini/index.ejs, resurse/css/style.css
 
 1) Banner print
-- Paragraf banner in footer -> index.html, linii 348-350
-- Stil banner la print -> CSS/style.css, linii 835-850
+- Paragraf banner in footer -> views/fragmente/footer.ejs, linii 1-3
+- Stil banner la print -> resurse/css/style.css, linii 845-860
 
 2) Ascundere media
-- Ascundere imagini, media, iframe, object/PDF si elemente dependente -> CSS/style.css, linii 805-826
-- Ascundere link catre inceputul paginii -> index.html, linia 349; CSS/style.css, linii 824-826
+- Ascundere imagini, media, iframe, object/PDF si elemente dependente -> resurse/css/style.css, linii 815-836
+- Ascundere link catre inceputul paginii -> views/fragmente/footer.ejs, linia 2; resurse/css/style.css, linii 834-836
 
 3) Layout print
-- Main si zona 1 afisate block -> CSS/style.css, linii 756-759
-- Zonele grid fara efecte vizuale la print -> CSS/style.css, linii 659-670 si 761-776
-- Tabel lizibil pentru print -> CSS/style.css, linii 778-794
+- Main si zona 1 afisate block -> resurse/css/style.css, linii 766-769
+- Zonele grid fara efecte vizuale la print -> resurse/css/style.css, linii 669-680 si 771-786
+- Tabel lizibil pentru print -> resurse/css/style.css, linii 788-804
 
 4) Linkuri normale
-- Linkurile mostenesc culoarea si nu mai sunt subliniate -> CSS/style.css, linii 796-803
+- Linkurile mostenesc culoarea si nu mai sunt subliniate -> resurse/css/style.css, linii 806-812
 
 5) Header, meniu si page break
-- H1 centrat si subtitlu ascuns -> CSS/style.css, linii 672-687
-- Meniu ca lista neordonata verticala, fara submeniuri/iconuri -> CSS/style.css, linii 689-753
-- Page break dupa header/meniu -> CSS/style.css, linii 672-677
-- Page break inainte de footer -> CSS/style.css, linii 829-832
+- H1 centrat si subtitlu ascuns -> resurse/css/style.css, linii 682-697
+- Meniu ca lista neordonata verticala, fara submeniuri/iconuri -> resurse/css/style.css, linii 699-764
+- Page break dupa header/meniu -> resurse/css/style.css, linii 682-686
+- Page break inainte de footer -> resurse/css/style.css, linii 839-842
 
 6) Watermark
-- Watermark cu nume/prenume, dimensiuni, border, opacity si pozitie fixa -> CSS/style.css, linii 633-656
+- Watermark cu nume/prenume, dimensiuni, border, opacity si pozitie fixa -> resurse/css/style.css, linii 643-666
 
 7) Margini print
-- @page general, pagini stanga si pagini dreapta -> CSS/style.css, linii 601-616
+- @page general, pagini stanga si pagini dreapta -> resurse/css/style.css, linii 611-626
 
 8) Protectie fata de media query-urile responsive
-- Media query-uri responsive limitate la screen -> CSS/style.css, liniile 556 si 854
+- Media query-uri responsive limitate la screen -> resurse/css/style.css, liniile 566 si 864
+
+==================================================
+ETAPA 4 - Node, Express si EJS
+==================================================
+
+Fisiere principale: index.js, package.json, views/, erori.json, resurse/
+
+1) Initializare proiect Node
+- Proiectul are package.json creat cu npm init.
+- Sunt setate numele proiectului, autorul, descrierea si cuvintele cheie.
+- Sunt instalate dependintele express si ejs.
+- Exista scriptul npm start pentru pornirea serverului cu node index.js.
+
+2) Server Express
+- In radacina proiectului exista fisierul index.js.
+- Serverul Express foloseste portul 8080 implicit.
+- Daca portul 8080 este ocupat, serverul incearca portul 8081.
+- In consola se afiseaza __dirname, __filename si process.cwd().
+- __dirname si process.cwd() nu sunt intotdeauna acelasi lucru: __dirname este folderul fisierului curent, iar process.cwd() este folderul din care a fost pornit procesul Node.
+
+3) EJS si structura views
+- View engine-ul este setat la ejs.
+- Folderul views contine pagini si fragmente.
+- Paginile intregi sunt in views/pagini.
+- Fragmentele reutilizabile sunt in views/fragmente.
+- Fisierul principal a fost redenumit in views/pagini/index.ejs.
+- Head-ul comun, headerul si footerul au fost decupate in fragmente separate si incluse cu include().
+
+4) Resurse statice
+- Folderul resurse este definit static in Express.
+- Resursele sunt organizate in subfoldere: resurse/css, resurse/imagini, resurse/documente si resurse/ico.
+- Caile din pagini sunt scrise ca cereri catre server, de forma /resurse/....
+
+5) Rute pentru pagini
+- Pagina principala se poate accesa prin /, /index si /home.
+- Exista ruta generala /*, plasata ultima, care incearca randarea paginii cerute din views/pagini.
+- Pentru randare se foloseste callback-ul render(eroare, rezultatRandare).
+- Daca view-ul nu exista si eroarea incepe cu "Failed to lookup view", se afiseaza pagina 404.
+- Pentru alte erori se afiseaza pagina de eroare generica.
+
+6) Sistem de erori
+- Erorile sunt configurate in erori.json.
+- JSON-ul contine cale_baza, eroare_default si vectorul info_erori.
+- Sunt definite erorile 400, 403 si 404.
+- Imaginile pentru erori sunt in resurse/imagini/erori.
+- initErori() citeste JSON-ul si incarca datele in obGlobal.obErori.
+- afisareEroare() primeste response-ul, identificatorul si optional titlu/text/imagine.
+- Daca titlul, textul sau imaginea sunt transmise ca argument, acestea au prioritate fata de datele din JSON.
+- Template-ul comun pentru erori este views/pagini/eroare.ejs.
+
+7) Pagina noua
+- A fost adaugata pagina views/pagini/istoric.ejs.
+- Pagina are continut scurt despre proiectul 4Pets.
+- Meniul contine link catre /istoric, deci pagina se acceseaza prin cerere GET.
+
+8) IP utilizator
+- In zona "Date utilizator si statistici" este afisat IP-ul utilizatorului.
+- Local se vede de obicei ::1.
+
+9) Restrictii speciale
+- Cererile catre foldere din /resurse primesc eroarea 403 Forbidden.
+- Cererile catre fisiere cu extensia .ejs primesc eroarea 400 Bad Request.
+- Cererea /favicon.ico trimite fisierul favicon.ico cu sendFile().
+
+10) Foldere generate
+- Exista vectorul vect_foldere cu: temp, logs, backup, fisiere_uploadate.
+- La pornirea serverului se verifica existenta fiecarui folder si se creeaza daca lipseste.
+- Pentru concatenarea cailor filesystem este folosit path.join().
+
+11) Verificare
+- npm start porneste serverul.
+- Rutele /, /index, /home si /istoric raspund cu 200.
+- /resurse/css/ raspunde cu 403.
+- /index.ejs raspunde cu 400.
+- /nu-exista raspunde cu 404.
+
+==================================================
+REFERINTE RAPIDE PENTRU PREZENTARE (ETAPA 4)
+==================================================
+Fisiere principale: index.js, package.json, views/, erori.json, resurse/
+
+1) package.json si dependinte
+- Nume, descriere, autor, keywords, script start, express si ejs -> package.json, linii 1-31
+
+2) Server si informatii cai
+- Importuri, app Express, port implicit -> index.js, linii 1-6
+- __dirname, __filename, process.cwd() si explicatie -> index.js, linii 13-16
+- View engine EJS si folder views -> index.js, linii 18-19
+- Pornire server pe 8080 cu fallback 8081 -> index.js, linii 126-142
+
+3) Foldere generate
+- vect_foldere si creare foldere -> index.js, linii 21-27
+
+4) Fragmente EJS
+- Include head si header in index -> views/pagini/index.ejs, linii 4-10
+- Head comun -> views/fragmente/head.ejs, linii 1-20
+- Header comun si link /istoric in meniu -> views/fragmente/header.ejs, linii 1-55
+- Footer comun -> views/fragmente/footer.ejs, linii 1-27
+
+5) Resurse statice
+- Verificare foldere /resurse si express.static -> index.js, linii 98-109
+- Cai /resurse in head -> views/fragmente/head.ejs, linii 9-20
+- Cai /resurse pentru PDF si imagini -> views/pagini/index.ejs, linii 102-105, 155-171 si 265-268
+
+6) Rute
+- /favicon.ico -> index.js, linii 90-92
+- Blocare fisiere .ejs cu 400 -> index.js, linii 94-96
+- /, /index, /home -> index.js, linii 111-113
+- Ruta generala /* -> index.js, linii 115-123
+
+7) Randare si erori
+- Callback render cu 404 pentru view lipsa si eroare generica pentru alte erori -> index.js, linii 66-80
+- erori.json -> erori.json, linii 1-31
+- initErori() -> index.js, linii 29-40
+- afisareEroare() -> index.js, linii 42-64
+- Template eroare -> views/pagini/eroare.ejs, linii 1-24
+
+8) Pagina noua si IP
+- Pagina noua istoric -> views/pagini/istoric.ejs, linii 1-28
+- Link catre pagina noua in meniu -> views/fragmente/header.ejs, linii 35-39
+- IP utilizator trimis si afisat -> index.js, linii 66-68 si 85-88; views/pagini/index.ejs, linii 123-126

@@ -1,88 +1,13 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Matei Pop">
-    <meta name="keywords" content="pet shop, animale de companie, hrana animale, accesorii animale, jucarii animale, ingrijire animale">
-    <meta name="description" content="4Pets este un pet shop pentru animale de companie, cu hrana animale, accesorii animale si jucarii animale pentru ingrijire responsabila.">
-    <meta name="msapplication-TileColor" content="#2e5f7d">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4Pets | Pet shop pentru animale de companie</title>
-
-    <link rel="icon" href="resurse/ico/favicon.ico" sizes="any">
-    <link rel="icon" type="image/svg+xml" href="resurse/ico/favicon.svg">
-    <link rel="icon" type="image/png" sizes="96x96" href="resurse/ico/favicon-96x96.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="resurse/ico/apple-touch-icon.png">
-    <link rel="manifest" href="resurse/ico/site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="CSS/reset.css">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/menu.css">
+    <%- include("../fragmente/head", {
+        titluPagina: "4Pets | Pet shop pentru animale de companie",
+        descrierePagina: "4Pets este un pet shop pentru animale de companie, cu hrana animale, accesorii animale si jucarii animale pentru ingrijire responsabila."
+    }) %>
 </head>
 <body>
-    <header id="inceput">
-        <hgroup>
-            <h1>4Pets</h1>
-            <p>Pet shop pentru animale de companie, cu hrana animale si accesorii animale alese corect.</p>
-        </hgroup>
-
-        <nav class="meniu-site" aria-label="Meniu principal">
-            <input class="meniu-toggle" type="checkbox" id="comutator-meniu">
-            <label class="buton-burger" for="comutator-meniu" aria-label="Deschide meniul">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-
-            <ul class="lista-meniu">
-                <li class="optiune-meniu prima-pagina">
-                    <a href="index.html">
-                        <i class="fa-solid fa-house" aria-hidden="true"></i>
-                        <span class="text-optiune">Acasa</span>
-                    </a>
-                    <ul class="submeniu">
-                        <li><a href="#despre">Despre</a></li>
-                        <li><a href="#produse">Produse</a></li>
-                        <li><a href="#evenimente">Evenimente</a></li>
-                        <li><a href="#video">Video</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </li>
-                <li class="optiune-meniu">
-                    <a href="#produse">
-                        <i class="fa-solid fa-bone" aria-hidden="true"></i>
-                        <span class="text-optiune">Produse</span>
-                    </a>
-                </li>
-                <li class="optiune-meniu">
-                    <a href="galerie-statica.html">
-                        <i class="fa-solid fa-images" aria-hidden="true"></i>
-                        <span class="text-optiune">Galerii</span>
-                    </a>
-                    <ul class="submeniu">
-                        <li><a href="galerie-statica.html">Galerie statica</a></li>
-                        <li><a href="galerie-dinamica.html">Galerie dinamica</a></li>
-                        <li><a href="galerie-video.html">Galerie video</a></li>
-                    </ul>
-                </li>
-                <li class="optiune-meniu">
-                    <a href="#faq">
-                        <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
-                        <span class="text-optiune">Servicii</span>
-                    </a>
-                </li>
-                <li class="optiune-meniu">
-                    <a href="#contact">
-                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                        <span class="text-optiune">Contact</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <%- include("../fragmente/header") %>
 
     <main>
         <section id="despre" class="zona-grid zona-1">
@@ -176,7 +101,7 @@
 
             <p>
                 Descarca oferta PDF:
-                <a href="resurse/oferta-4pets.pdf" download="oferta-4pets-descarcata.pdf">download oferta 4Pets</a>
+                <a href="/resurse/documente/oferta-4pets.pdf" download="oferta-4pets-descarcata.pdf">download oferta 4Pets</a>
             </p>
         </section>
 
@@ -197,6 +122,7 @@
 
         <section id="statistici" class="zona-grid zona-6 placeholder">
             <h2>Date utilizator si statistici</h2>
+            <p>IP utilizator: <strong><%= ipUtilizator %></strong></p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec ipsum quis mauris eleifend gravida.</p>
         </section>
 
@@ -226,23 +152,23 @@
                 <h3>Imagine reprezentativa</h3>
                 <figure>
                     <picture>
-                        <source media="(max-width: 600px)" srcset="resurse/Images/peggy-small.jpg">
-                        <source media="(max-width: 1024px)" srcset="resurse/Images/peggy-medium.jpg">
-                        <img src="resurse/Images/peggy-large.jpg" alt="Caine fericit in magazinul 4Pets" title="Client 4Pets multumit" width="768" height="940">
+                        <source media="(max-width: 600px)" srcset="/resurse/imagini/site/peggy-small.jpg">
+                        <source media="(max-width: 1024px)" srcset="/resurse/imagini/site/peggy-medium.jpg">
+                        <img src="/resurse/imagini/site/peggy-large.jpg" alt="Caine fericit in magazinul 4Pets" title="Client 4Pets multumit" width="768" height="940">
                     </picture>
                     <figcaption>Imagine din magazin: clienti cu animale de companie, hrana animale si accesorii animale in zona principala.</figcaption>
                 </figure>
 
                 <p>
-                    <a href="resurse/Images/peggy-large.jpg">
-                        <img src="resurse/Images/peggy-small.jpg" alt="Click pentru varianta mare a imaginii" width="240" height="294">
+                    <a href="/resurse/imagini/site/peggy-large.jpg">
+                        <img src="/resurse/imagini/site/peggy-small.jpg" alt="Click pentru varianta mare a imaginii" width="240" height="294">
                     </a>
                     (la click, imaginea mare se deschide in tabul curent)
                 </p>
 
                 <h4>Harta de imagine</h4>
                 <p>Alege zona dorita pentru navigare rapida.</p>
-                <img src="resurse/Images/picture_map.png" alt="Harta interactiva a sectiunilor din pagina" usemap="#harta-4pets" width="640" height="360">
+                <img src="/resurse/imagini/site/picture_map.png" alt="Harta interactiva a sectiunilor din pagina" usemap="#harta-4pets" width="640" height="360">
                 <map name="harta-4pets">
                     <area shape="rect" coords="0,0,213,180" href="#produse" alt="Zona produse">
                     <area shape="rect" coords="213,0,426,180" href="#calendar" alt="Zona evenimente">
@@ -336,41 +262,15 @@
 
             <section id="pdf">
                 <h3>Brosura PDF</h3>
-                <object data="resurse/oferta-4pets.pdf" type="application/pdf" width="700" height="500">
+                <object data="/resurse/documente/oferta-4pets.pdf" type="application/pdf" width="700" height="500">
                     <p>Browserul nu poate afisa PDF-ul. Deschide fisierul aici:
-                        <a href="resurse/oferta-4pets.pdf" target="_blank" rel="noopener noreferrer">Brosura 4Pets</a>.
+                        <a href="/resurse/documente/oferta-4pets.pdf" target="_blank" rel="noopener noreferrer">Brosura 4Pets</a>.
                     </p>
                 </object>
             </section>
         </section>
     </main>
 
-    <footer id="contact">
-        <p class="link-inceput"><a href="#inceput">Inapoi la inceputul paginii</a></p>
-        <p class="banner-print">Acesta este un proiect școlar!</p>
-
-        <address>
-            Telefon: <a href="tel:+40700111222">+40&nbsp;700&nbsp;111&nbsp;222</a><br>
-            Adresa: <a href="https://maps.google.com/?q=Facultatea+de+Matematica+si+Informatica" target="_blank" rel="noopener noreferrer">Str. Lalelelor nr. 12<br>Sector 3, Bucuresti</a><br>
-            E-mail: <a href="mailto:contact@4pets.ro">contact@4pets.ro</a><br>
-            WhatsApp: <a href="https://wa.me/40700111222">Scrie-ne pe WhatsApp</a>
-        </address>
-
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8455262214805!2d26.099139000000002!3d44.435478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFacultatea%20de%20Matematica%20si%20Informatica!5e0!3m2!1sen!2sro!4v1653025599049!5m2!1sen!2sro"
-            width="560"
-            height="315"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Harta Facultatea de Matematica si Informatica">
-        </iframe>
-
-        <p>
-            <small>&copy; 4Pets, pagina creata la data de <time datetime="2026-03-02">2 martie 2026</time>.</small>
-        </p>
-    </footer>
-    <a id="link-top" href="#inceput" title="Mergi la inceputul paginii" aria-label="Mergi la inceputul paginii">
-        <span id="sageata-top">&#8593;</span>
-    </a>
+    <%- include("../fragmente/footer") %>
 </body>
 </html>

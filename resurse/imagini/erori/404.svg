@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="titlu desc">
+  <title id="titlu">Eroare 404</title>
+  <desc id="desc">Ilustratie pentru pagina negasita</desc>
+  <rect width="640" height="360" fill="#f6f2e8"/>
+  <circle cx="306" cy="158" r="82" fill="#ffffff" stroke="#17443e" stroke-width="8"/>
+  <path d="M366 218l70 70" stroke="#17443e" stroke-width="22" stroke-linecap="round"/>
+  <path d="M269 151h74M306 114v74" stroke="#d99b32" stroke-width="16" stroke-linecap="round"/>
+  <text x="320" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="60" font-weight="700" fill="#17443e">404</text>
+</svg>

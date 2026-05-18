@@ -1,0 +1,32 @@
+{
+  "name": "4pets",
+  "version": "1.0.0",
+  "description": "Site 4Pets pentru pet shop, realizat cu Express si EJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mateiul123/TW.git"
+  },
+  "keywords": [
+    "pet shop",
+    "animale de companie",
+    "hrana animale",
+    "accesorii animale",
+    "jucarii animale"
+  ],
+  "author": "Matei Pop",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mateiul123/TW/issues"
+  },
+  "homepage": "https://github.com/Mateiul123/TW#readme",
+  "dependencies": {
+    "ejs": "^5.0.2",
+    "express": "^4.22.2"
+  }
+}

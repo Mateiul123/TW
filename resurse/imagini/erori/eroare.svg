@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="titlu desc">
+  <title id="titlu">Eroare generica</title>
+  <desc id="desc">Ilustratie pentru eroare generica</desc>
+  <rect width="640" height="360" fill="#f6f2e8"/>
+  <path d="M320 54l232 252H88L320 54z" fill="#ffffff" stroke="#17443e" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M320 135v82" stroke="#d99b32" stroke-width="20" stroke-linecap="round"/>
+  <circle cx="320" cy="255" r="12" fill="#d99b32"/>
+  <text x="320" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#17443e">Eroare</text>
+</svg>

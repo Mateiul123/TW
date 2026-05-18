@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include("../fragmente/head", {
+        titluPagina: titlu,
+        descrierePagina: text
+    }) %>
+</head>
+<body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <section class="zona-grid pagina-eroare">
+            <h2><%= titlu %></h2>
+            <p><%= text %></p>
+            <% if (imagine) { %>
+                <img class="imagine-eroare" src="<%= imagine %>" alt="<%= titlu %>">
+            <% } %>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+</body>
+</html>

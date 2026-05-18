@@ -467,6 +467,16 @@ math mn {
     font-weight: 700;
 }
 
+.pagina-eroare {
+    text-align: center;
+}
+
+.imagine-eroare {
+    width: min(28rem, 85%);
+    min-width: 0;
+    margin-top: 1rem;
+}
+
 #link-top {
     position: fixed;
     right: 1.1rem;
